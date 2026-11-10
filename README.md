@@ -6,6 +6,7 @@
 
 ## 先看什么
 
+- [论文草稿原文](paper/sn-article.tex)（[来源与配套文件说明](paper/README.md)）
 - [第一代模型与实际训练设置](docs/architecture.md)
 - [主要结果及证据范围](docs/results.md)
 - [内部指标的定义](docs/metrics.md)

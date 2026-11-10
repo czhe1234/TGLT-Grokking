@@ -1,0 +1,765 @@
+
+% ============================================================
+% NMI-style revised internal manuscript
+% Integrated version after comparing two drafts
+% ============================================================
+
+\documentclass[11pt]{article}
+
+% -----------------------------
+% Packages
+% -----------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{float}
+\usepackage{authblk}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{url}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+\setstretch{1.06}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+% -----------------------------
+% Theorem environments
+% -----------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{remark}{Remark}
+
+% -----------------------------
+% Macros
+% -----------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\KL}{\mathrm{KL}}
+\newcommand{\TV}{\mathrm{TV}}
+\newcommand{\Acc}{\mathrm{Acc}}
+\newcommand{\argmin}{\mathop{\mathrm{argmin}}}
+\newcommand{\argmax}{\mathop{\mathrm{argmax}}}
+\newcommand{\TGLT}{\ensuremath{\mathrm{TGLT}}}
+\newcommand{\Mone}{\ensuremath{\mathrm{M1}}}
+\newcommand{\Mtwo}{\ensuremath{\mathrm{M2}}}
+\newcommand{\Mthree}{\ensuremath{\mathrm{M3}}}
+\newcommand{\Mfour}{\ensuremath{\mathrm{M4}}}
+\newcommand{\ip}[2]{\langle #1,\, #2 \rangle}
+
+% -----------------------------
+% Title block
+% -----------------------------
+\title{\textbf{Theorem-grounded local computation for collective learning}}
+
+\author[1]{First Author}
+\author[1]{Second Author}
+\author[2]{Third Author}
+\author[1,*]{Corresponding Author}
+
+\affil[1]{Department / Institute, University, City, Country}
+\affil[2]{Department / Institute, University, City, Country}
+\affil[*]{Correspondence: author@email.edu}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Dense global attention makes transformers powerful but obscures which variables control long-range learning, delayed generalization and capability onset. We study a restricted setting in which exact statements are possible and use it to define a controlled local alternative. For nonnegative exponential-sum one-dimensional kernels, we prove that the corresponding long-range visible model admits an exact lifted-local realization with Gaussian auxiliary variables. This theorem yields an exact theorem-grounded local computation class with explicit mode channels and bounded communication depth, and motivates a sequence-native theorem-grounded local transformer whose key coordinates are local radius, sweep depth, mode count and interaction sharpness. We then define matched experiments on theorem-native teacher kernels, theorem-native sequence-level exponential-sum computations, modular arithmetic grokking and in-context regression. The contribution is not a universal equivalence between transformers and lattice systems, but a theorem-grounded framework that makes collective learning experimentally legible.
+\end{abstract}
+
+Dense transformers combine expressive representation learning with almost unrestricted global communication. That combination is powerful, but it makes mechanism-level analysis difficult. When delayed generalization, abrupt capability onset or other collective phenomena appear during training, it is often unclear whether the relevant driver is communication range, compositional depth, hidden sharpness, optimization, or some interaction among them. Dense attention couples every position to every other position in a single operation, so the model exposes no clean variable that measures how far information has propagated before a capability emerges.
+
+This paper asks a narrower question. Rather than arguing that transformers are literally lattice systems, we seek a theorem-grounded local replacement for dense global interaction in a restricted setting where exact statements are possible. The central object is therefore not two-dimensional geometry itself, but \emph{local computation as a controlled replacement for dense global interaction}. Once locality is explicit, three experimentally important quantities become measurable: the local radius \(r\), the number of propagation sweeps \(T\), and the resulting communication diameter. These are precisely the quantities needed to study how far information must travel before a model exhibits long-range behaviour.
+
+Our starting point is a one-dimensional long-range visible model whose pairwise interaction kernel belongs to a tractable class. For nonnegative exponential-sum kernels, we prove an exact lifted-local realization theorem: the visible long-range interaction is exactly the marginal of a local model with Gaussian auxiliary variables. The theorem does not collapse arbitrary transformers into classical lattice systems. What it provides is an explicit mathematical mechanism by which nonlocal visible interaction can be replaced by local computation in an expanded state space.
+
+The theorem has two consequences that we keep separate throughout. First, it yields an exact theorem-grounded local computation class with explicit mode channels and bounded communication depth. Second, it motivates a generalized sequence-native theorem-grounded local transformer (\TGLT) that preserves the theorem-exposed coordinates---mode count \(M\), sweep depth \(T\), local radius \(r\), and interaction sharpness \(\beta\)---without claiming exact equivalence outside the tractable kernel family. In this framing, any square-grid implementation is secondary rather than central.
+
+We use this framework in four experiments. A theorem-grounding study tests whether exact mode structure provides an inductive bias in the theorem-native synthetic setting. A theorem-native sequence study lifts the same exponential-sum structure into final-query sequence tasks and asks whether onset is organized by explicit communication coordinates. A spectral modular-arithmetic study tests whether delayed generalization is accompanied by reorganization of the mode pathway in a controlled modular setting whose teacher logits have known Fourier and exponential structure. A theorem-native in-context regression study tests whether local mode channels accumulate regression-relevant sufficient statistics across context examples. Across all four experiments, the goal is not benchmark breadth but mechanistic clarity.
+
+Our claim is therefore specific. We establish an exact localization theorem for a nontrivial kernel class, extract from it an exact local computation class, define a generalized theorem-grounded local transformer, and use the resulting architecture and diagnostics to make long-range learning more measurable. We do not claim that all transformers are lattice systems, that grokking is literally a thermodynamic phase transition, or that \TGLT{} should replace dense attention at scale. We claim that theorem-grounded local computation turns collective learning into a more reproducible and interpretable experimental object.
+
+\section*{Results}
+
+\subsection*{Restricted attention induces a tractable one-dimensional long-range visible model}
+
+We begin with a pairwise long-range visible model over sequence-indexed variables \(v=(v_1,\dots,v_n)\), where \(v_i\in\R^d\). The visible energy is
+\begin{equation}
+\mathcal F(v)
+=
+\sum_{1\le i<j\le n} K(|i-j|)\,\ip{v_i}{v_j}
++\sum_{i=1}^{n}\ip{b_i}{v_i},
+\label{eq:visible-energy}
+\end{equation}
+with position-dependent bias vectors \(b_i\in\R^d\). The kernel belongs to the tractable family when
+\begin{equation}
+K(r)=\sum_{m=1}^{M}\alpha_m \lambda_m^r,
+\qquad
+\alpha_m\ge 0,\quad 0<\lambda_m<1.
+\label{eq:exp-sum-kernel}
+\end{equation}
+
+The family in \eqref{eq:exp-sum-kernel} is rich enough to approximate a broad range of decaying one-dimensional interactions on finite windows, while remaining structured enough that each exponential component admits a Markovian realization. This is the exact theorem-supported family on which the rest of the paper is built.
+
+\subsection*{An exact lifted-local theorem localizes the tractable family}
+
+For each mode \(m\), introduce auxiliary variables \(z^{(m)}=(z_1^{(m)},\dots,z_n^{(m)})\), \(z_i^{(m)}\in\R^d\), and define the local chain energy
+\begin{equation}
+\mathcal Q_m(z^{(m)})
+=
+\frac12\|z_1^{(m)}\|^2
++
+\frac{1}{2(1-\lambda_m^2)}
+\sum_{i=1}^{n-1}\|z_{i+1}^{(m)}-\lambda_m z_i^{(m)}\|^2.
+\label{eq:mode-chain-energy}
+\end{equation}
+
+\begin{theorem}[Exact lifted-local realization]
+\label{thm:lifted-local-exact}
+Let \(K\) be given by \eqref{eq:exp-sum-kernel}. Define the lifted energy
+\begin{equation}
+H_{\mathrm{lift}}(v,z)
+=
+\sum_{m=1}^{M}\mathcal Q_m(z^{(m)})
+-
+\sum_{m=1}^{M}\sqrt{\alpha_m}\sum_{i=1}^{n}\ip{z_i^{(m)}}{v_i}
+-
+\sum_{i=1}^{n}\ip{b_i}{v_i}.
+\label{eq:lifted-hamiltonian}
+\end{equation}
+Then there exists a constant \(C>0\), independent of \(v\), such that
+\begin{equation}
+\int_{\R^{dMn}} e^{-H_{\mathrm{lift}}(v,z)}\,dz
+=
+C\exp\!\bigl(\mathcal F(v)\bigr).
+\label{eq:lifted-marginal}
+\end{equation}
+\end{theorem}
+
+The proof proceeds mode by mode via the Gaussian moment-generating identity. Each auxiliary row is an AR(1) Gaussian chain whose covariance decays as \(\lambda_m^{|i-j|}\), so integrating out the auxiliaries reproduces the visible kernel exactly. The theorem therefore replaces one-dimensional visible long-range interaction by local computation in an expanded state space.
+
+The theorem is exact for \(\R^d\)-valued visible variables, not only for scalars or binary spins. This matters because it allows the lifted-local construction to be stated directly at the level of token or hidden-state representations rather than only at the level of discrete spins.
+
+\begin{corollary}[Approximate lifting]
+\label{cor:approx-lifting}
+If a target kernel \(K^\star\) on \(\{1,\dots,n-1\}\) satisfies \(\sup_r|K^\star(r)-K(r)|\le \varepsilon\) for an exponential-sum kernel \(K\), then on bounded visible configurations the corresponding visible distributions remain close in likelihood ratio and in KL divergence, with error scaling at most linearly in \(\varepsilon n^2\).
+\end{corollary}
+
+This corollary is the mathematical reason the theorem can be used as an exact anchor for a broader architectural and experimental programme without pretending that the whole programme is exact.
+
+\subsection*{The theorem yields an exact theorem-grounded local computation class}
+
+The lifted Hamiltonian can be bundled into a nearest-neighbour chain whose local state at position \(i\) is
+\[
+x_i=\bigl(v_i, z_i^{(1)},\dots,z_i^{(M)}\bigr).
+\]
+In this bundled form, the energy becomes
+\begin{equation}
+H_{\mathrm{lift}}(x)
+=
+\sum_{i=1}^{n-1}\Psi(x_i,x_{i+1})
++
+\sum_{i=1}^{n}\Phi_i(x_i),
+\label{eq:bundled-chain}
+\end{equation}
+where \(\Psi\) contains only nearest-neighbour auxiliary couplings and \(\Phi_i\) contains the visible--auxiliary interactions and on-site terms. Consequently, the lifted model is already a local computation class on the original sequence axis. A square-grid embedding is possible, but it is not logically necessary.
+
+A more explicit computational consequence follows from the mode decomposition. For each mode \(m\), define forward and backward channels
+\begin{equation}
+f_i^{(0,m)}=0,\qquad
+f_i^{(t+1,m)}=
+\begin{cases}
+0,& i=1,\\
+\lambda_m f_{i-1}^{(t,m)}+\lambda_m v_{i-1},& 2\le i\le n,
+\end{cases}
+\label{eq:forward-mode}
+\end{equation}
+and
+\begin{equation}
+g_i^{(0,m)}=0,\qquad
+g_i^{(t+1,m)}=
+\begin{cases}
+0,& i=n,\\
+\lambda_m g_{i+1}^{(t,m)}+\lambda_m v_{i+1},& 1\le i\le n-1.
+\end{cases}
+\label{eq:backward-mode}
+\end{equation}
+
+\begin{proposition}[Exact mode-channel local computation]
+\label{prop:mode-channel}
+For every \(t\ge 0\),
+\begin{equation}
+f_i^{(t,m)}=\sum_{\substack{j<i\\ i-j\le t}}\lambda_m^{i-j}v_j,
+\qquad
+g_i^{(t,m)}=\sum_{\substack{j>i\\ j-i\le t}}\lambda_m^{j-i}v_j.
+\label{eq:mode-partial-sums}
+\end{equation}
+Hence, for every \(T\ge n-1\),
+\begin{equation}
+b_i+\sum_{j\neq i}K(|i-j|)v_j
+=
+b_i+\sum_{m=1}^{M}\alpha_m\bigl(f_i^{(T,m)}+g_i^{(T,m)}\bigr).
+\label{eq:exact-mode-field}
+\end{equation}
+The exact conditional field of the tractable family is therefore computable by repeated radius-1 local updates with only \(2M\) persistent mode channels.
+\end{proposition}
+
+Proposition~\ref{prop:mode-channel} identifies the three architectural coordinates that matter before any generalized model is introduced: mode count \(M\), sweep depth \(T\), and the effective communication diameter implied by repeated local propagation. These remain the main experimental coordinates throughout the paper.
+
+\subsection*{A generalized theorem-grounded local transformer preserves the theorem-exposed coordinates}
+
+The exact theorem-grounded computation class motivates a generalized sequence-native architecture. In \TGLT{}, position \(i\) carries a visible state \(h_i^{(\ell,t)}\in\R^d\) and \(M\) persistent auxiliary mode states \(a_i^{(\ell,t,m)}\in\R^{d_a}\). With local radius \(r\), the neighbourhood is
+\[
+\mathcal N_r(i)=\{j\in[n]: |i-j|\le r\}.
+\]
+Each layer executes \(T\) local sweeps, so the effective communication diameter is bounded by \(2rT\).
+
+Each sweep combines three pathways. The first is a local content pathway,
+\begin{equation}
+c_i^{(\ell,t)}
+=
+\sum_{j\in\mathcal N_r(i)} \alpha_{ij}^{(\ell,t)} V_c^{(\ell)} h_j^{(\ell,t)}.
+\label{eq:content-path}
+\end{equation}
+The second is a theorem-grounded mode pathway,
+\begin{equation}
+a_i^{(\ell,t+1,m)}
+=
+\phi_m^{(\ell)}\!\bigl(
+a_{i-r}^{(\ell,t,m)},\dots,a_{i+r}^{(\ell,t,m)}, h_i^{(\ell,t)}
+\bigr),
+\label{eq:mode-update}
+\end{equation}
+which reduces to the exact recurrences of Proposition~\ref{prop:mode-channel} in the exact subclass and is learned locally in the generalized model. The third is a visible--auxiliary readout,
+\begin{equation}
+e_i^{(\ell,t)}
+=
+\sum_{m=1}^{M} w_m^{(\ell)} \psi_m^{(\ell)}\!\bigl(h_i^{(\ell,t)}, a_i^{(\ell,t,m)}\bigr),
+\qquad
+\widetilde e_i^{(\ell,t)}=\beta e_i^{(\ell,t)},
+\label{eq:mode-readout}
+\end{equation}
+modulated by an explicit interaction-sharpness parameter \(\beta\). The visible state is updated by
+\begin{equation}
+h_i^{(\ell,t+1)}
+=
+\mathrm{MLP}^{(\ell)}
+\!\left(
+\mathrm{LN}\!\left(
+h_i^{(\ell,t)}
++
+W_c^{(\ell)} c_i^{(\ell,t)}
++
+W_e^{(\ell)} \widetilde e_i^{(\ell,t)}
+\right)
+\right).
+\label{eq:visible-update}
+\end{equation}
+
+The architectural signature of \TGLT{} is therefore not two-dimensional geometry, but explicit visible--auxiliary structure. Long-range dependence is carried by persistent local mode channels rather than by one-shot dense global interaction.
+
+\subsection*{The strip is both an architectural object and an analytical instrument}
+
+The theorem does more than motivate an architecture. It also exposes a family of observables that can be measured directly from the auxiliary pathway. For each mode \(m\), define the mode correlation function
+\begin{equation}
+\Gamma_m(r)
+=
+\frac{1}{n-r}\sum_{i=1}^{n-r}\ip{a_i^{(m)}}{a_{i+r}^{(m)}},
+\label{eq:mode-correlation}
+\end{equation}
+and estimate a correlation length \(\xi_m\) by exponential fitting. In the exact theorem-grounded regime, \(\xi_m=-1/\log\lambda_m\). We also define visible--auxiliary coupling
+\begin{equation}
+C_m=\frac{1}{n}\sum_{i=1}^{n}\ip{h_i}{a_i^{(m)}},
+\label{eq:visible-aux-coupling}
+\end{equation}
+and, when a task has a known spectral structure, a task--mode alignment observable \(\Phi_m\) obtained by projecting the mode channel onto task-relevant Fourier or latent directions.
+
+These observables are exact architectural state variables in \TGLT{}. For dense transformers, they can also be approximated post hoc by fitting an exponential-sum surrogate kernel and constructing a virtual strip. We treat that analysis as an optional diagnostic rather than as a main theorem.
+
+\subsection*{The empirical programme is organized around four claims}
+
+The empirical programme is designed around four matched experimental blocks.
+
+\textbf{Experiment 0: theorem-grounding on exact teacher kernels.} Teacher conditionals are generated analytically from the exact exponential-sum family. The main question is whether theorem-grounded mode structure improves conditional modelling and length extrapolation relative to a parameter-matched local baseline without persistent auxiliary channels.
+
+\textbf{Experiment 1: capability onset in theorem-native sequence tasks.} We study final-query sequence tasks whose ground truth is an exponential-sum long-range computation: field regression, sign classification, and gated field regression. The primary question is whether performance onset and internal organization align coherently with explicit communication coordinates \(T\) and \(r\), and with spectral capacity \(M\). In the current calibrated suite, \(\beta\)-sweeps are not part of Experiment~1 and are therefore treated as a separate architectural control rather than as a primary Exp1 variable.
+
+\textbf{Experiment 2: delayed generalization in spectral modular arithmetic.} We study a calibrated modular-arithmetic suite in which the primary target is a theorem-native logit field centered at \(a+b \bmod p\). The hard modular label is still evaluated by top-1 accuracy, but the teacher also provides a smooth spectral field whose Fourier and exponential components are known. The central question is whether delayed generalization is accompanied by reorganization of the mode pathway, measured by \(C_m\), \(\xi_m\), task--mode Fourier alignment, raw accuracy and calibration-aware loss diagnostics.
+
+\textbf{Experiment 3: theorem-grounded mode channels in in-context regression.} We study theorem-native in-context regression tasks in which the target is generated from exponentially weighted sufficient statistics accumulated over context examples. The main question is whether persistent local mode channels support the accumulation and deployment of regression-relevant statistics across increasing context length.
+
+The experimental point is not that every task must show phase-transition-like behaviour. The point is that the theorem exposes interpretable coordinates and observables with which long-range learning can be perturbed and compared.
+
+\subsection*{Experiment 0 tests the theorem in its exact native setting}
+
+The theorem-grounding study is the logical keystone of the paper because it is the only regime in which the theoretical assumptions hold exactly. Teacher conditional distributions are generated from exact one-dimensional exponential-sum kernels,
+\begin{equation}
+K(r)=\sum_{m=1}^{M_{\mathrm{teacher}}}\alpha_m\lambda_m^r,
+\label{eq:teacher-kernel}
+\end{equation}
+and student models are trained to recover held-out sitewise conditional probabilities. Training uses lengths \(n\in\{16,32,64\}\), while evaluation includes extrapolation to \(n\in\{128,256,512\}\).
+
+This experiment addresses three concrete questions. First, does theorem-grounded local structure improve conditional modelling under matched parameter count, communication diameter and optimization budget? Second, does the learned mode spectrum recover the teacher spectrum in the exact setting? Third, does theorem-grounded propagation improve length extrapolation because the local recurrence itself is length-independent?
+
+We additionally perturb the teacher kernel away from the exact family by adding oscillatory or slowly decaying components. This tests how gracefully theorem-grounded advantages degrade when the assumptions of the theorem are no longer exact.
+
+\subsection*{Experiment 1 studies theorem-native sequence-level capability onset}
+
+The latest Experiment~1 suite is deliberately theorem-native. Earlier arbitrary long-range tasks such as parity-like and bracket-like objectives were not reliable tests of the lifted-local theorem: some collapsed to majority baselines and others remained near chance. We therefore replaced them with sequence-level tasks whose ground truth is an exponential-sum long-range computation, thereby preserving a direct bridge to the exact theorem while still requiring sequence-level information transport.
+
+Each input sequence contains local visible values and a final query position. The target depends on a long-range exponential-sum field accumulated from the context:
+\begin{equation}
+y
+=
+\frac{1}{Z}
+\sum_{j<n}
+\left(
+\sum_{m=1}^{M_{\mathrm{teacher}}}
+\alpha_m \lambda_m^{n-j}
+\right) x_j ,
+\label{eq:exp1-field-target}
+\end{equation}
+where \(Z\) normalizes the target scale. We evaluate three main variants. In field regression, the model predicts \(y\) directly. In sign classification, the model predicts \(\mathbf 1\{y>0\}\). In gated field regression, the effective value is \(x_j g_j\), so the model must combine local gating with long-range exponential accumulation.
+
+This experiment therefore tests two theorem-exposed variables directly. The first is communication budget: with local radius \(r\) and sweep depth \(T\), the final query can receive information only from distance at most \(rT\). The second is spectral capacity: a student with mode count \(M\) can represent more of the teacher exponential spectrum as \(M\) approaches \(M_{\mathrm{teacher}}\). The calibrated suite uses nested theorem-compatible decay banks, nonnegative mode amplitudes, and positive input gains, so increasing \(M\) corresponds to adding spectral degrees of freedom rather than arbitrary signed filters.
+
+The current calibrated results support a narrowed conclusion. On the sign-classification task, performance increases sharply when both communication and spectral capacity are sufficient. For the three-mode teacher, \TGLT{} with \(M=3\) improves from approximately \(0.868\) test accuracy at \(T=4\) to \(0.964\) at \(T=12\), and to \(0.998\) at \(T=24\). The same model retains approximately \(0.990\) accuracy on the doubled-length evaluation. In contrast, matched and enlarged local convolutional baselines remain around \(0.85\)--\(0.88\), and the dense transformer baseline performs well in-distribution but degrades substantially on the doubled-length evaluation.
+
+For regression variants, the clearest signal is shape recovery rather than raw calibration. In exponential-sum field regression and gated field regression, the theorem-grounded model with sufficient \(M\) and \(T\) recovers the target field almost perfectly in correlation, while raw MSE can remain poor when the learned amplitude is miscalibrated. Post-hoc scalar affine calibration largely removes this discrepancy. Thus the correct Exp1 interpretation is not that the raw theorem-grounded regressor always dominates all baselines, but that the mode pathway learns the correct long-range computation up to a low-dimensional calibration error.
+
+Mode ablations confirm that the explicit auxiliary pathway is carrying the theorem-native signal. When the mode contribution is zeroed, classification drops to the majority-level regime and regression error returns close to the no-field baseline. Sweep ablations likewise show that performance improves as reachable distance \(rT\) grows. Experiment~1 therefore supports the claim that theorem-native sequence capability onset is organized by communication budget and spectral capacity. It does not, by itself, establish the same claim for arbitrary long-range tasks outside the exponential-sum regime.
+
+\subsection*{Experiment 1 shows communication- and spectrum-controlled onset in theorem-native tasks}
+
+The calibrated Experiment~1 results show the clearest onset in the theorem-native sign-classification task. With a three-mode teacher, \TGLT{} reaches approximately \(0.868\) test accuracy at \(T=4\), \(0.964\) at \(T=12\), and \(0.998\) at \(T=24\) when \(M\ge 3\). The doubled-length evaluation remains high, reaching approximately \(0.990\) at \(T=24\). Reducing the spectral capacity to \(M=1\) keeps accuracy near \(0.79\), while \(M=2\) reaches about \(0.91\). Thus both sufficient sweep depth and sufficient mode count are required for near-perfect performance.
+
+The regression tasks reveal a useful calibration distinction. For exponential-sum field regression, \TGLT{} with \(M=3\) and \(T=24\) achieves near-perfect field correlation, but its raw MSE is large because the learned output amplitude is miscalibrated. A post-hoc scalar affine correction reduces the test MSE to approximately zero, indicating that the learned mode pathway has recovered the correct field shape. The gated regression task shows the same pattern: with \(M=3\) and \(T=24\), raw regression error is poorly calibrated, but post-hoc affine MSE is near zero and correlation is essentially perfect.
+
+These results motivate a conservative interpretation. Experiment~1 supports theorem-native communication onset and spectral-capacity dependence, especially in sign classification and calibrated field recovery. It does not support a broad claim that the current architecture already solves arbitrary long-range symbolic tasks. The older parity-like and bracket-like tasks should therefore be treated as negative or out-of-scope controls rather than as the main evidence for the theorem-grounded mechanism.
+
+\subsection*{Experiment 2 tests delayed generalization in spectral modular arithmetic}
+
+The original modular-addition task is a useful stress test but a poor primary diagnostic for the theorem-grounded mechanism: it can fail for reasons unrelated to local mode propagation, including output calibration, optimization instability and insufficient spectral scaffolding. We therefore use a calibrated spectral modular-arithmetic suite as the primary Experiment~2. The hard label remains
+\[
+c^\star = a+b \bmod p ,
+\]
+but the teacher also defines a smooth logit field over candidate residues \(c\in\mathbb Z_p\). The model is trained to predict this field, or a cross-entropy target derived from it, and is evaluated both by raw top-1 modular accuracy and by field-recovery diagnostics.
+
+The primary theorem-native teacher field is
+\begin{equation}
+L_{a,b}(c)
+=
+\tau
+\sum_{m=1}^{M_{\mathrm{teacher}}}
+\alpha_m
+\lambda_m^{d_p(c,c^\star)}
++
+\sum_{q\in\mathcal K}
+\eta_q
+\cos\!\left(\frac{2\pi q(c-c^\star)}{p}\right),
+\label{eq:spectral-modular-field}
+\end{equation}
+where \(d_p\) is circular distance on \(\mathbb Z_p\), \(\tau\) controls logit sharpness, and \(\mathcal K\) is a small set of low-frequency Fourier modes. The exponential term makes the correct residue a local peak in a theorem-compatible distance kernel, while the Fourier term gives an explicit task--mode alignment target. The hard modular-addition label is obtained by \(\argmax_c L_{a,b}(c)=c^\star\).
+
+Inputs are represented on a residue strip of length \(p\). At residue position \(c\), the model receives local features indicating the relation of \(c\) to the operands, including sparse operand indicators and low-frequency phase features. This representation keeps the task modular while avoiding an unnecessary optimization bottleneck in the input encoding. The output is a length-\(p\) logit field. Thus the model must organize information over the residue axis and produce a globally consistent modular peak.
+
+The primary metrics are raw top-1 accuracy, raw cross-entropy, teacher-field MSE, prediction--teacher-field correlation, validation-fitted affine-calibrated field MSE, and expected calibration error. Grokking time is defined only from raw test accuracy, not from post-hoc calibrated losses. Affine calibration is used as a diagnostic of field-shape recovery, following Experiments~0 and~1.
+
+The main hypothesis is specific. We do not claim that all modular grokking is a thermodynamic phase transition. We test whether, in a controlled spectral modular task, the memorization-to-generalization transition coincides with reorganization of the explicit mode pathway. A positive result means that raw test accuracy rises after a delay, while visible--auxiliary coupling \(C_m(t)\), mode correlation length \(\xi_m(t)\), and task--mode Fourier alignment \(\Phi_m(t)\) sharpen near the same training window.
+
+We additionally include hard modular addition as a secondary stress test. It is not used as the primary support for the theorem-grounded claim. If the hard task succeeds, it extends the evidence beyond the theorem-native field. If it fails, the primary spectral modular result still tests the intended mechanism in a controlled setting.
+
+
+\subsection*{Experiment 3 tests theorem-native sufficient-statistic accumulation in in-context regression}
+
+The primary in-context regression experiment is redesigned to align with the theorem-grounded mechanism. Instead of starting with arbitrary ridge-regression instances, we first test a theorem-native regression task whose target is generated by exponential-sum accumulation of context sufficient statistics. Each sequence contains context pairs \((x_i,y_i)\) followed by a query \(x_\star\). The latent target is
+\begin{equation}
+s
+=
+\sum_{i=1}^{k}
+K(k+1-i)\,x_i y_i,
+\qquad
+K(r)=\sum_{m=1}^{M_{\mathrm{teacher}}}\alpha_m\lambda_m^r,
+\label{eq:icr-sufficient-statistic}
+\end{equation}
+and the prediction target is
+\begin{equation}
+y_\star
+=
+\frac{1}{\sqrt d}\,x_\star^\top s + \epsilon_\star .
+\label{eq:icr-target}
+\end{equation}
+This task is a direct regression analogue of the theorem-native Exp1 field computation. The relevant information \(x_i y_i\) is local at each context example, while the sufficient statistic \(s\) must be accumulated across the sequence by a long-range exponential-sum computation.
+
+The model input explicitly contains \(x_i\), \(y_i\), and the local product feature \(x_i y_i\) at context positions, with \(y_\star\) masked at the query. This mirrors the calibrated design of Experiments~0 and~1: the experiment tests whether the architecture can propagate and combine the theorem-relevant local quantity, rather than whether it can discover a fragile input encoding from scratch. The query position receives \(x_\star\) and must read out the accumulated mode state.
+
+The primary metrics are raw MSE, prediction--target correlation, validation-fitted affine-calibrated MSE, calibration gap, and long-context extrapolation. The calibration gap is defined as
+\begin{equation}
+\Delta_{\mathrm{cal}}
+=
+\mathrm{MSE}_{\mathrm{raw}}
+-
+\mathrm{MSE}_{\mathrm{affine}},
+\label{eq:calibration-gap}
+\end{equation}
+where the affine map is fitted on the validation split and applied unchanged to the test split. A small calibrated MSE with large raw MSE is interpreted as recovery of the regression-relevant computation with residual scalar miscalibration, not as complete raw task solution.
+
+The main hypothesis is that persistent local mode channels improve with context length because they provide a length-independent mechanism for accumulating \(s\). We test this by varying context length, mode count \(M\), sweep depth \(T\), and local radius \(r\), and by zeroing the mode pathway after training. Removing persistent mode channels should disproportionately harm long-context performance and increase the calibration gap.
+
+After the theorem-native sufficient-statistic task is established, standard in-context linear regression with ridge-optimal targets is included as a secondary stress test. This harder task is reported separately and is not required for the primary claim that theorem-grounded mode channels support local accumulation of regression-relevant information.
+
+
+\subsection*{Ablations isolate which theorem-grounded coordinates are genuinely explanatory}
+
+Each ablation targets a specific mechanistic question. Removing the persistent mode pathway tests whether \TGLT{} does more than local content mixing. Varying mode count \(M\) tests whether the architecture benefits systematically from additional spectral degrees of freedom. Reducing sweep depth \(T\) tests whether onset tracks communication budget. Setting \(\beta\to 0\) tests whether explicit interaction sharpness is necessary for the clarity of the observed organization. A temperature-matched dense baseline tests whether apparent gains arise from structured local mode channels rather than from a generic scalar sharpness control alone.
+
+Because affine calibration can improve field or regression losses without changing the underlying computation, all experiments report raw and calibrated metrics separately. In Experiment~2, grokking time is defined only from raw test accuracy. In Experiment~3, the difference between raw and affine-calibrated MSE is reported as a calibration gap. We also compare learned affine output heads with fixed-scale output heads to ensure that output-temperature effects are not mistaken for mode-pathway reorganization.
+
+Finally, a virtual-strip comparison between \Mone{} and \Mthree{} evaluates how far the theorem-grounded observables remain informative even when the model does not contain explicit auxiliary channels.
+
+\section*{Discussion}
+
+The exact content of this paper is deliberately narrower than the most ambitious possible interpretation. The main rigorous result is a lifted-local realization theorem for a tractable family of one-dimensional long-range kernels acting on \(\R^d\)-valued token representations. This theorem converts visible long-range interaction into local computation with Gaussian auxiliary variables and yields an exact theorem-grounded local computation class with explicit mode channels.
+
+The broader programme is architectural and methodological rather than universally representational. Within the exact exponential-sum family, \TGLT{} implements the theorem-grounded local computation class directly. Outside that family, \TGLT{} is a generalized local transformer that preserves the theorem-exposed coordinates \(M\), \(T\), \(r\), and \(\beta\) without claiming exact equivalence. This distinction is essential. The paper does not identify arbitrary transformers with lattice systems, nor does it claim that all emergence-like phenomena in modern models are literally phase transitions.
+
+What the theorem does provide is a disciplined interface between long-range sequence modelling and controlled local computation. Because the architecture contains an explicit auxiliary pathway, long-range structure is no longer a hidden by-product of dense attention; it becomes a measurable state variable. That is why the main scientific promise of the framework is not merely architectural efficiency, but experimental legibility.
+
+The most interesting empirical outcome, if borne out by the proposed experiments, is that delayed generalization and capability onset may align with explicit reorganization of the mode pathway. In spectral modular arithmetic, this means that delayed generalization is evaluated in a setting where the teacher field has known exponential and Fourier structure. A positive result is not merely improved modular accuracy, but a synchronized change in visible--auxiliary coupling, mode correlation length, task--mode Fourier alignment and raw test accuracy. In theorem-native long-range sequence tasks, capability onset is organized by communication variables rather than appearing as an opaque black-box threshold. In theorem-native in-context regression, mode channels reveal how local sufficient statistics are accumulated across context examples before being used at the query position.
+
+
+The latest Experiment~1 results sharpen this claim. In theorem-native sequence tasks, capability onset is most clearly observed when the task itself is an exponential-sum long-range computation. The sign-classification variant shows strong dependence on both sweep depth and mode count, while regression variants reveal near-perfect field-shape recovery together with a residual scalar calibration problem. This distinction is important: the current evidence supports theorem-native communication onset and spectral-capacity dependence, but it does not yet establish comparable behaviour for arbitrary symbolic long-range tasks such as parity or bracket matching.
+
+Several limitations remain. The exact theorem covers only a tractable kernel family and does not directly address arbitrary content-dependent, non-stationary or multi-head interactions. The auxiliary variables are Gaussian, so the local lifted system is mixed-state rather than fully discrete. The proposed experiments are medium-scale and synthetic by design, prioritizing mechanism over frontier performance. The virtual-strip analysis for dense transformers is promising, but it should be regarded as a derived diagnostic rather than as an exact theorem.
+
+Within that scope, the contribution is substantial. The paper suggests a research programme in which neural architectures are designed not only for expressive power but also for structural legibility. When locality, propagation depth, mode count and interaction sharpness are explicit, long-range learning becomes easier to perturb, measure and compare. The contribution is therefore methodological as much as architectural: theorem-grounded local computation makes collective learning into a more reproducible experimental object.
+
+Taken together, the calibrated experimental programme supports a precise claim. When the target computation is generated by exponential-sum or low-rank spectral structure, theorem-grounded local mode channels provide a controllable mechanism for long-range computation. Communication depth, mode count and interaction sharpness become experimentally manipulable variables, while affine-calibrated diagnostics separate recovery of computational shape from scalar output calibration. The claim is therefore not that \TGLT{} universally solves arbitrary symbolic or in-context tasks, but that theorem-grounded local computation makes a broad class of collective learning phenomena measurable and reproducible.
+
+\section*{Methods}
+
+\subsection*{Proof of Theorem~\ref{thm:lifted-local-exact}}
+
+Fix a visible configuration \(v=(v_1,\dots,v_n)\), \(v_i\in\R^d\). By independence across modes,
+\begin{equation}
+\int_{\R^{dMn}} e^{-H_{\mathrm{lift}}(v,z)}\,dz
+=
+e^{\sum_i \ip{b_i}{v_i}}
+\prod_{m=1}^{M}
+\int_{\R^{dn}}
+\exp\!\left(
+-\mathcal Q_m(z^{(m)})
++
+\sqrt{\alpha_m}\sum_{i=1}^{n}\ip{z_i^{(m)}}{v_i}
+\right)dz^{(m)}.
+\label{eq:factored-integral}
+\end{equation}
+For each mode \(m\), \(\mathcal Q_m\) defines a centered Gaussian AR(1) chain with covariance \((\Sigma_m)_{ij}=\lambda_m^{|i-j|}\). The Gaussian moment-generating identity therefore yields
+\begin{equation}
+\int_{\R^{dn}}
+\exp\!\left(
+-\mathcal Q_m(z^{(m)})
++
+\sqrt{\alpha_m}\sum_{i=1}^{n}\ip{z_i^{(m)}}{v_i}
+\right)dz^{(m)}
+=
+C_m \exp\!\left(
+\frac{\alpha_m}{2}\sum_{i,j=1}^{n}\lambda_m^{|i-j|}\ip{v_i}{v_j}
+\right),
+\label{eq:single-mode-mgf}
+\end{equation}
+where \(C_m>0\) is independent of \(v\). Multiplying over modes and absorbing \(i=j\) terms that are independent of relative position gives
+\begin{equation}
+\int_{\R^{dMn}} e^{-H_{\mathrm{lift}}(v,z)}\,dz
+=
+C\exp\!\left(
+\sum_{1\le i<j\le n} K(|i-j|)\ip{v_i}{v_j}
++
+\sum_{i=1}^{n}\ip{b_i}{v_i}
+\right),
+\end{equation}
+proving the theorem.
+
+\subsection*{Proof of Corollary~\ref{cor:approx-lifting}}
+
+Let \(F^\star(v)\) and \(F(v)\) denote the visible energies defined by kernels \(K^\star\) and \(K\), respectively. If \(\sup_r|K^\star(r)-K(r)|\le\varepsilon\) on \(\{1,\dots,n-1\}\) and \(\|v_i\|\le B\), then
+\begin{equation}
+|F^\star(v)-F(v)|
+\le
+\varepsilon B^2 \binom{n}{2}.
+\end{equation}
+Uniform likelihood-ratio control follows immediately. Standard Gibbs perturbation bounds then imply two-sided KL control of order \(\varepsilon B^2 n^2\).
+
+\subsection*{Bundled local-state decomposition}
+
+Define the bundled state
+\[
+x_i=(v_i,z_i^{(1)},\dots,z_i^{(M)}).
+\]
+The lifted Hamiltonian decomposes as
+\begin{equation}
+H_{\mathrm{lift}}(x)
+=
+\sum_{i=1}^{n-1}\Psi(x_i,x_{i+1})+\sum_{i=1}^{n}\Phi_i(x_i),
+\end{equation}
+with
+\begin{equation}
+\Psi(x_i,x_{i+1})
+=
+\sum_{m=1}^{M}
+\frac{\|z_{i+1}^{(m)}-\lambda_m z_i^{(m)}\|^2}{2(1-\lambda_m^2)}
+\end{equation}
+and
+\begin{equation}
+\Phi_i(x_i)
+=
+-\ip{b_i}{v_i}
+-\sum_{m=1}^{M}\sqrt{\alpha_m}\ip{z_i^{(m)}}{v_i}
++\frac12\mathbf 1_{\{i=1\}}\sum_{m=1}^{M}\|z_i^{(m)}\|^2.
+\end{equation}
+This proves exact locality in the bundled chain.
+
+\subsection*{Proof of Proposition~\ref{prop:mode-channel}}
+
+The identities in \eqref{eq:mode-partial-sums} follow by induction on \(t\). For the forward channel,
+\[
+f_i^{(t+1,m)}
+=
+\lambda_m f_{i-1}^{(t,m)}+\lambda_m v_{i-1}
+=
+\lambda_m\sum_{\substack{j<i-1\\ i-1-j\le t}}\lambda_m^{i-1-j}v_j+\lambda_m v_{i-1}
+=
+\sum_{\substack{j<i\\ i-j\le t+1}}\lambda_m^{i-j}v_j.
+\]
+The backward identity is analogous. When \(T\ge n-1\), every position has been reached, and summing over \(m\) with weights \(\alpha_m\) gives \eqref{eq:exact-mode-field}.
+
+\subsection*{Restricted attention and Gibbs compatibility in the binary case}
+
+For completeness, consider binary spins \(s\in\{-1,+1\}^n\) with sitewise update field
+\begin{equation}
+u_i(s_{-i})=h_i+\sum_{j\neq i}J_{ij}s_j.
+\end{equation}
+Then the single-site conditional
+\begin{equation}
+\mathbb P(s_i=a\mid s_{-i})
+=
+\frac{\exp(a\,u_i(s_{-i}))}{2\cosh(u_i(s_{-i}))}
+\end{equation}
+coincides with the Gibbs conditional of the Ising Hamiltonian
+\begin{equation}
+H(s)=-\sum_{i<j}J_{ij}s_i s_j-\sum_i h_i s_i.
+\end{equation}
+This gives the precise sense in which restricted attention-style pairwise updates admit an energy interpretation in the binary regime.
+
+\subsection*{\TGLT{} architecture details}
+
+The initial visible state is
+\begin{equation}
+h_i^{(0)}
+=
+E_{\mathrm{tok}}(x_i)+E_{\mathrm{pos}}(i)+E_{\mathrm{role}}(i),
+\end{equation}
+with mode channels initialized either to zero or to learned mode-specific biases. Each layer applies \(T\) local sweeps. At sweep \(t\),
+\begin{equation}
+\widetilde h_i^{(\ell,t)}
+=
+h_i^{(\ell,t)}
++
+W_c^{(\ell)}\sum_{j\in\mathcal N_r(i)} \alpha_{ij}^{(\ell,t)} V_c^{(\ell)} h_j^{(\ell,t)}
++
+\beta W_e^{(\ell)} \sum_{m=1}^{M} w_m^{(\ell)} \psi_m^{(\ell)}(h_i^{(\ell,t)},a_i^{(\ell,t,m)})
++
+\gamma W_d^{(\ell)} d_i^{(\ell,t)},
+\end{equation}
+followed by layer normalization and a pointwise MLP. The mode pathway updates in parallel through \eqref{eq:mode-update}. The exact theorem-grounded subclass is recovered when \(\phi_m\) is fixed to the linear recurrences implied by Proposition~\ref{prop:mode-channel} and \(\psi_m\) is chosen as a bilinear visible--auxiliary coupling.
+
+\subsection*{Dataset generation}
+
+\paragraph{Experiment 0: theorem-grounding.}
+Teacher kernels use \(M_{\mathrm{teacher}}\in\{1,2,4\}\), \(\alpha_m\sim \mathrm{Uniform}(0.1,1)\), and \(\lambda_m\sim \mathrm{Uniform}(0.3,0.95)\). Training lengths are \(n\in\{16,32,64\}\), with evaluation at \(n\in\{128,256,512\}\). Perturbation families include oscillatory additives and power-law tails.
+
+\paragraph{Experiment 1: theorem-native sequence tasks.}
+The current calibrated Experiment~1 suite uses final-query sequence tasks whose ground truth is an exponential-sum long-range computation. In field regression, the target is the normalized exponential-sum field in \eqref{eq:exp1-field-target}. In sign classification, the target is \(\mathbf 1\{y>0\}\). In gated field regression, each context value is multiplied by a binary gate before entering the same exponential-sum field. A single-mode field-regression task is included as a sanity check. The calibrated run uses training length \(n=48\), doubled-length evaluation at \(n=96\), local radius \(r=2\), sweep depths \(T\in\{4,12,24\}\), mode counts \(M\in\{1,2,3,4\}\), and three random seeds. The full protocol extends this design to larger length, radius, sweep-depth and seed sweeps.
+
+\paragraph{Experiment 2: spectral modular arithmetic.}
+For each prime \(p\), examples are pairs \((a,b)\in\mathbb Z_p^2\), with hard label \(c^\star=a+b\bmod p\). The primary target is the smooth teacher logit field in \eqref{eq:spectral-modular-field}. Unless otherwise stated, we use \(p\in\{23,59,97\}\), \(M_{\mathrm{teacher}}\in\{1,2,3\}\), \(\lambda_m\in[0.5,0.95]\), nonnegative \(\alpha_m\), and low-frequency Fourier modes \(\mathcal K\subset\{1,2,3,4\}\). Train fractions are chosen from \(\{0.3,0.5,0.7\}\). The model outputs a length-\(p\) logit field. We report raw top-1 accuracy, raw cross-entropy, teacher-field MSE, prediction--field correlation, validation-fitted affine-calibrated field MSE, and task--mode Fourier alignment. Hard modular addition without the smooth field is included only as a secondary stress test.
+
+
+\paragraph{Experiment 3: theorem-native in-context regression.}
+The primary task uses context pairs \((x_i,y_i)\) and a query \(x_\star\), with target generated by the exponential-sum sufficient statistic in \eqref{eq:icr-sufficient-statistic}--\eqref{eq:icr-target}. Context features \(x_i\in\mathbb R^d\) are sampled from a standard normal distribution and normalized by dimension. The local product feature \(x_i y_i\) is provided at context positions, while the query position contains \(x_\star\) and a masked target channel. Context lengths range from \(4\) to \(64\), feature dimension from \(4\) to \(16\), and doubled-length evaluation tests extrapolation beyond the training context window. Standard ridge-style in-context linear regression is reported separately as a secondary stress test.
+
+
+\subsection*{Model configurations}
+
+All comparisons are parameter-matched within approximately \(\pm 10\%\). Default settings are hidden width \(d=128\), \(4\) layers, \(4\) heads, local radius \(r=3\), sweep depth \(T\in\{4,8\}\), mode count \(M\in\{4,8\}\), and auxiliary width \(d_a=32\). Dense baselines receive a matched scalar temperature control on pre-softmax logits.
+
+\subsection*{Strip observable computation}
+
+Mode correlation lengths are estimated by fitting \(\log |\Gamma_m(r)|\) over \(r\in\{1,\dots,\lfloor n/4\rfloor\}\). Visible--auxiliary coupling is computed instancewise and averaged over held-out data. Task--mode alignment is computed against task-relevant Fourier or latent directions when available. The strip order parameter is
+\begin{equation}
+m_{\mathrm{strip}}=\frac{1}{M}\sum_{m=1}^{M} C_m.
+\end{equation}
+Experiment~1 does not use susceptibility-like or Binder-like quantities as evidence. Its primary diagnostics are task performance, doubled-length generalization, sweep ablation, mode ablation and effective-kernel recovery.
+
+\subsection*{Training protocol}
+
+All studies use AdamW with cosine learning-rate schedules. The theorem-grounding study uses \(10^5\) optimization steps with batch size \(128\). Long-range sequence tasks use \(5\times 10^4\) steps with batch size \(256\). Spectral modular-arithmetic experiments use \(10^5\) optimization steps under full-batch or large-batch regimes, depending on \(p\) and train fraction. We sweep \((\beta,\lambda_{\mathrm{wd}})\) and report raw accuracy, raw cross-entropy, calibrated field loss, output scale, logit norm and mode-pathway observables at fixed checkpoints. Grokking time is defined only from raw test accuracy.
+
+Theorem-native in-context regression uses \(3\times 10^4\) to \(10^5\) steps depending on context length, with batch sizes in \(\{64,128,256\}\). Raw MSE is the primary regression metric. Validation-fitted affine-calibrated MSE, prediction--target correlation and calibration gap are reported as diagnostics. The affine map is fitted on validation predictions and applied unchanged to test and long-context splits. All main results should report at least five random seeds.
+
+\subsection*{Affine calibration policy}
+
+Experiments~0--3 distinguish between computational shape recovery and scalar output calibration. Some models include a learned affine output head trained end-to-end. This head is part of the model architecture and is reported explicitly through its scale and bias parameters. Separately, we report post-hoc affine-calibrated metrics as diagnostics.
+
+For regression and field-prediction tasks, post-hoc calibration fits
+\begin{equation}
+\hat y_{\mathrm{cal}} = a\hat y+b
+\end{equation}
+on the validation split and applies the same affine map to test and extrapolation splits. For binary or multiclass logit fields, we analogously fit a scalar logit scale and bias when reporting calibrated loss. Post-hoc calibration is never used to define the primary success criterion. Raw MSE, raw cross-entropy and raw accuracy remain primary. Calibrated metrics diagnose whether a model has recovered the correct computational shape up to a low-dimensional scale or offset error.
+
+\subsection*{Finite-size analysis procedure}
+
+Finite-size-style analysis is accepted only when four conditions hold jointly: order-parameter curves sharpen with increasing \(n\); susceptibility peaks increase with \(n\); Binder-like curves show approximate crossings across adjacent system sizes; and the qualitative pattern is stable across seeds. Scaling collapse, when shown, is treated as supporting evidence rather than as a primary claim.
+
+\section*{Data Availability}
+
+All datasets are synthetic and reproducible from the generation procedures described in the Methods.
+
+\section*{Code Availability}
+
+Code for theorem-grounding data generation, model training, strip observable computation and figure reproduction should be released with the final submission.
+
+\section*{Acknowledgements}
+
+[To be added.]
+
+\section*{Author Contributions}
+
+[To be specified.]
+
+\section*{Competing Interests}
+
+The authors declare no competing interests.
+
+\bibliographystyle{naturemag}
+\bibliography{refs}
+
+\clearpage
+\section*{Figure Legends}
+
+\paragraph{Figure 1: From long-range interaction to theorem-grounded local computation.}
+\textbf{a}, One-dimensional visible sequence with pairwise long-range kernel \(K(|i-j|)\).
+\textbf{b}, Exponential-sum decomposition \(K(r)=\sum_m\alpha_m\lambda_m^r\).
+\textbf{c}, Lifted local chain with visible variables and auxiliary mode channels.
+\textbf{d}, Sequence-native \TGLT{} with local content pathway, persistent mode propagation and visible--auxiliary coupling.
+\textbf{e}, The theorem-exposed coordinates \((M,T,r,\beta)\) used in the experiments.
+
+\paragraph{Figure 2: Theorem-grounding on exact teacher kernels.}
+\textbf{a}, Conditional logit error versus sequence length for \Mtwo{}, \Mthree{} and \Mfour{}, including extrapolation beyond training lengths.
+\textbf{b}, Recovery of the teacher mode spectrum by \Mthree{}.
+\textbf{c}, Performance degradation under controlled perturbations away from the exact exponential-sum family.
+
+\paragraph{Figure 3: Theorem-native sequence capability onset.}
+\textbf{a}, Exponential-sum field-regression performance versus effective communication diameter \(rT\), comparing \TGLT{}, matched local convolutional baselines, enlarged local baselines and dense transformers.
+\textbf{b}, Sign-classification accuracy versus sweep depth and mode count, showing sharp improvement when \(rT\) is large enough and \(M\) covers the teacher spectral rank.
+\textbf{c}, Doubled-length evaluation, showing that theorem-native mode propagation can extrapolate when the learned computation is length-independent.
+\textbf{d}, Kernel-recovery diagnostics comparing the learned effective \TGLT{} kernel with the teacher exponential-sum kernel.
+\textbf{e}, Mode ablation and sweep ablation, showing degradation when persistent mode channels are zeroed or when the reachable distance is reduced.
+
+\paragraph{Figure 4: Spectral modular arithmetic and mode-pathway reorganization.}
+\textbf{a}, Raw train and test top-1 accuracy for the spectral modular-arithmetic task, with grokking time defined from raw test accuracy.
+\textbf{b}, Teacher-field recovery, showing raw field MSE, prediction--field correlation and validation-fitted affine-calibrated field MSE.
+\textbf{c}, Visible--auxiliary coupling \(C_m(t)\) and mode correlation length \(\xi_m(t)\) across checkpoints.
+\textbf{d}, Task--mode Fourier alignment \(\Phi_m(t)\), measured against the known Fourier components of the modular teacher field.
+\textbf{e}, Phase diagram over \((\beta,\lambda_{\mathrm{wd}})\), with output affine scale and logit norm reported separately to distinguish interaction sharpness from output-temperature effects.
+
+\paragraph{Figure 5: Theorem-native in-context regression through sufficient-statistic accumulation.}
+\textbf{a}, Raw MSE, affine-calibrated MSE and prediction--target correlation versus context length for \Mone{}--\Mfour{}.
+\textbf{b}, Calibration gap \(\Delta_{\mathrm{cal}}\) versus context length, separating field-shape recovery from scalar output miscalibration.
+\textbf{c}, Spatial accumulation of mode-channel state along the context, measured against the teacher sufficient statistic \(s=\sum_i K(k+1-i)x_i y_i\).
+\textbf{d}, Effect of removing persistent mode channels or reducing sweep depth \(T\), showing disproportionate degradation at longer context lengths.
+\textbf{e}, Long-context extrapolation from training context lengths to doubled context lengths.
+
+
+\paragraph{Figure 6: Controls, ablations and virtual-strip analysis.}
+\textbf{a}, Effect of removing mode channels.
+\textbf{b}, Effect of sweep depth.
+\textbf{c}, Matched temperature-control comparison in dense baselines.
+\textbf{d}, Agreement between explicit-strip and virtual-strip observables.
+
+\clearpage
+\appendix
+\renewcommand{\thesection}{Supplementary Note \arabic{section}}
+
+\section{Integrability of residual fields}
+
+Suppose a binary update field admits a decomposition
+\[
+u_i(s_{-i})=h_i+\sum_{j\neq i}J_{ij}s_j+\rho_i(s_{-i}).
+\]
+If the discrete curl-free condition \(\delta_j\rho_i=\delta_i\rho_j\) holds for all \(i\neq j\), then the residual field is integrable and defines an additional global energy term whose Gibbs conditionals match the update rule. This gives a precise criterion for when restricted attention plus structured residual terms remains exactly energy-compatible.
+
+\section{Approximation of general decaying kernels by exponential sums}
+
+On any finite interaction range \(\{1,\dots,N\}\), broad classes of decaying kernels can be approximated uniformly by finite sums of exponentials. This justifies using the exponential-sum family as the exact theorem-supported class while still treating it as a broadly useful local basis for approximate lifting.
+
+\section{Communication-diameter bound under repeated local sweeps}
+
+For a local transformer with radius \(r\) and \(T\) sweeps per layer, the output at position \(i\) depends only on inputs within distance \(rT\). Conversely, for any target position \(j\) satisfying \(|i-j|\le rT\), there exists a parameter choice that relays information from \(j\) to \(i\) through repeated local propagation. This bound is the operational meaning of communication depth in the generalized architecture.
+
+\section{Additional experimental details}
+
+[Placeholder for full hyperparameter tables, compute budgets, data-generation pseudocode and evaluation-set sizes.]
+
+\section{Calibrated design of Experiments 2 and 3}
+
+Experiments~2 and~3 are intentionally designed to avoid a mismatch between the theorem and the task. The primary tasks are not arbitrary benchmark instances. Instead, they are theorem-native tasks whose ground-truth computations are built from exponential-sum kernels or known spectral components.
+
+For Experiment~2, hard modular addition is supplemented by a smooth spectral teacher field centered at the correct residue. This makes the task modular while exposing a recoverable field, known Fourier directions and meaningful task--mode alignment observables. For Experiment~3, standard in-context regression is preceded by a sufficient-statistic task in which the target is generated by exponential-sum accumulation of \(x_i y_i\). This makes the role of persistent local mode channels explicit and testable.
+
+This design matches the logic of Experiments~0 and~1. Raw task metrics remain primary, while affine-calibrated metrics diagnose whether a model has recovered the correct computational shape up to scalar calibration.
+
+
+\section{Additional ablation results}
+
+[Placeholder for per-seed plots, extended perturbation curves, alternative task families and sensitivity analyses.]
+
+\section{Relationship to state-space models}
+
+Mode-channel recurrences resemble state-space propagation, but the conceptual roles differ. In \TGLT{}, the recurrence parameters are theorem-grounded by the exact lifted-local construction, the visible--auxiliary interface is explicit, and the interaction-sharpness parameter \(\beta\) is part of the scientific specification. This makes \TGLT{} not just a sequence model with recurrence, but a controlled architecture for studying long-range learning.
+
+\end{document}
