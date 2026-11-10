@@ -1,0 +1,33 @@
+{
+  "scope": "Package verification and CPU random-state identities; no retraining and no all-checkpoint replay in this packaging task",
+  "source_files_checked": 1118,
+  "runs": 297,
+  "history_rows": 91194,
+  "frozen_strict_labels": {
+    "architecture_scan": 32,
+    "beta_wd_scan": 58
+  },
+  "terminal_steps": {
+    "architecture_scan:100000": 192,
+    "beta_wd_scan:300000": 78,
+    "beta_wd_scan:100000": 27
+  },
+  "maximum_accuracy_count_error": 0.0,
+  "complete_500_step_histories": true,
+  "continuation_prefixes_match": true,
+  "model_cpu": {
+    "torch": "2.4.1+cu121",
+    "trainable_parameters": 62787,
+    "total_parameters": 62791,
+    "finite_exponential_sweep_max_error": 1.7763568394002505e-15,
+    "mode_write_identity_max_error": 1.7763568394002505e-15,
+    "full_forward_max_error": 6.661338147750939e-16
+  },
+  "optimizer_steps": 0,
+  "portable_redraws_executed": [
+    "seed_means",
+    "ablation"
+  ],
+  "redraws_visually_checked": true,
+  "readme_major_figures_preserved_from_existing_results": true
+}

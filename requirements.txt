@@ -1,0 +1,5 @@
+# CPU verification and saved-result plotting; tested versions.
+torch==2.4.1
+numpy==1.24.4
+matplotlib==3.7.5
+tqdm==4.70.1

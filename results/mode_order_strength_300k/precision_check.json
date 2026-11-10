@@ -1,0 +1,15 @@
+[
+  {
+    "run": "b4_wd0.01_s0",
+    "step": 65000,
+    "test_n": 2611,
+    "historical_test_correct": 41,
+    "cpu_native64": 44,
+    "cpu_native32": 43,
+    "cpu32_vs_64_changed_inputs": 2,
+    "all_changed_within_numeric_bound": true,
+    "Csd64": 0.009855361029945732,
+    "Csd_algebra32": 0.00985536233539382,
+    "absolute_Csd_difference": 1.3054480881707908e-09
+  }
+]

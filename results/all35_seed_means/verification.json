@@ -1,0 +1,28 @@
+{
+  "runs": 105,
+  "cells": 35,
+  "seeds_per_mean": 3,
+  "seed_counts_reached50": {
+    "0": 3,
+    "1": 3,
+    "2": 3,
+    "3": 26
+  },
+  "aligned_cells": 26,
+  "raw_fallback_cells": 9,
+  "seeds_reached50": 87,
+  "source_policy": "All 105 existing runs, irrespective of strict label. 78 reach 300k, 27 end at 100k.",
+  "center": "First measured crossing of 50% in test accuracy. Estimate time by linear interpolation between the bracketing saves, keep the time scale.",
+  "aggregation": "Piecewise-linear individual means within common observed support of all three; raw uses identical original steps. No lower-n tails.",
+  "description_of_band": "Across three seeds, sample standard deviation (ddof=1), displayed within [0,1].",
+  "earlier_nine_max_abs_error": 1.6653345369377348e-15,
+  "raw_horizons": {
+    "100000": 18,
+    "300000": 17
+  },
+  "terminal_steps": {
+    "100000": 27,
+    "300000": 78
+  },
+  "plots_only": true
+}

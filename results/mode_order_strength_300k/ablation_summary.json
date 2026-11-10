@@ -1,0 +1,68 @@
+{
+  "strict": {
+    "n": 58,
+    "primary_start_top_gap_min": 0.07771794926468008,
+    "primary_end_top_gap_min": 0.3716471552809633,
+    "answer_dir_variance_share_start_median": 0.9647547091260544,
+    "answer_dir_variance_share_end_median": 0.9813090666372581,
+    "n_modes_up": [
+      55,
+      56,
+      57,
+      57
+    ],
+    "counts_how_many_modes_up": {
+      "0": 0,
+      "1": 0,
+      "2": 1,
+      "3": 5,
+      "4": 52
+    },
+    "hit90_native": 58,
+    "hit90_any_single_raw": 0,
+    "hit90_any_single_RMS": 1,
+    "hit90_any_single_raw_or_RMS": 1,
+    "median_native": 0.9375718115664496,
+    "median_best_single_raw": 0.19417847567981616,
+    "median_best_single_RMS": 0.3299502106472616,
+    "median_best_of_either": 0.3299502106472616,
+    "no_single_even_RMS_correct_fraction_at_start": 0.6055512764084507,
+    "no_single_even_RMS_correct_fraction_at_end": 0.44480568338603665,
+    "needs_combination_raw_before": 167,
+    "needs_combination_raw_after": 1739,
+    "native_better_than_best_of_either": 58
+  },
+  "other90": {
+    "n": 25,
+    "primary_start_top_gap_min": 0.17053770332511006,
+    "primary_end_top_gap_min": 0.6134340581220676,
+    "answer_dir_variance_share_start_median": 0.966659363025454,
+    "answer_dir_variance_share_end_median": 0.981558212048923,
+    "n_modes_up": [
+      19,
+      22,
+      25,
+      24
+    ],
+    "counts_how_many_modes_up": {
+      "0": 0,
+      "1": 1,
+      "2": 1,
+      "3": 5,
+      "4": 18
+    },
+    "hit90_native": 25,
+    "hit90_any_single_raw": 0,
+    "hit90_any_single_RMS": 0,
+    "hit90_any_single_raw_or_RMS": 0,
+    "median_native": 0.9410187667560321,
+    "median_best_single_raw": 0.23400995787054768,
+    "median_best_single_RMS": 0.3657602451168135,
+    "median_best_of_either": 0.3657602451168135,
+    "no_single_even_RMS_correct_fraction_at_start": 0.6296296296296297,
+    "no_single_even_RMS_correct_fraction_at_end": 0.45743865030674846,
+    "needs_combination_raw_before": 193,
+    "needs_combination_raw_after": 1625,
+    "native_better_than_best_of_either": 25
+  }
+}

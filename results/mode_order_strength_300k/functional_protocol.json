@@ -1,0 +1,5 @@
+{
+  "timing": "Exploratory followup after primary directional results, before the new ablation endpoints were measured.",
+  "scope": "58 original strict windows;25 other first complete rises as separate comparison; controls at matched absolute landmarks",
+  "procedure": "Recompute each mode directional standard deviation. Evaluate all four individual L2 query writes versus their sum, preserving upstream layers and original LayerNorm, residual, bias, gates and trained readout. Also test each single write rescaled to full centered RMS across the uniform input grid. Counts and scoring use answers, direction analogue and magnitude do not. Report the test-selected best of all four raw and four RMS-matched singles as an upper bound for these frozen interventions. No training."
+}

@@ -1,0 +1,100 @@
+{
+  "task": "First generation fixed-topology beta by weight-decay strict Grokking map",
+  "source_sha256": "e419f0d77f35fecd70d1b1d19a5338a6408ed4209aff0d70c892a355ec600f73",
+  "fixed": {
+    "layers": 2,
+    "r": 3,
+    "T": 4,
+    "H": 12,
+    "M": 4,
+    "p": 59,
+    "task": "add",
+    "train_fraction": 0.25,
+    "seq_len": 16,
+    "pos_a": 0,
+    "pos_b": 7,
+    "query": 15,
+    "d": 64,
+    "da": 8,
+    "steps": 100000,
+    "lr": 0.001,
+    "warmup": 100,
+    "schedule": "constant",
+    "optimizer": "native AdamW .9,.98,1e-8; bias and LayerNorm no decay; clip1; fullbatch; FP32"
+  },
+  "grid": {
+    "beta": [
+      0.25,
+      0.5,
+      1,
+      2,
+      4
+    ],
+    "wd": [
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "base_runs": 75,
+    "beta_definition": "local_coupling in both layers; not inverse logit temperature; no output weight normalization modification"
+  },
+  "label": {
+    "source": "unchanged audit() extracted from firstgen_addition_numbered_label_audit_20261026/audit_numbered.py",
+    "criteria": [
+      "first train>=.99",
+      "test<=.10 continuously from first train99 for>=10000 saved-step span",
+      "first test>=.90; width from last initial low-platform sample positive and<half platform length"
+    ],
+    "report_training_dips": true,
+    "no_early_stopping": true,
+    "no_relabeling": true
+  },
+  "measure": {
+    "primary": "G11 effective second-layer/query15 rule power D=sum diagonal S, full uniform59^2 grid; LayerNorm after additive decomposition",
+    "secondary": "signed offdiag I; per-mode D, coherent D+I and raw D retained",
+    "frequency": 500,
+    "checkpoints": "0..100000 every500 full model optimizer RNG loader; history additionally1"
+  },
+  "anchor_gate": {
+    "runs": 3,
+    "seed0": "A800 physical4",
+    "seed1": "H100 physical3",
+    "seed2": "H100 physical1",
+    "initialization_and_split_exact": true,
+    "prefix1000_max_param_error": 0.0001,
+    "full_required_before_other72": true,
+    "full_gate": "Same strict label/reason, t_mem/t_low_end/t90 within1000 steps, final test difference<=.01, mean absolute test curve error<=.02 and maximum<=.10; parameter exactness separately reported. If failure stop and investigate, do not silently relax."
+  },
+  "analysis": {
+    "cell": "3/3 strict G, mixed1/3 or2/3, 0/3; show allseed curves and finite100k outcomes",
+    "boundary": "retain possible bounded Grokking band and multiple/reentrant transitions; no forced single monotone line; seedwise crossing brackets, stable3/3 versus0/3 brackets; mixed intervals unresolved",
+    "ratio": "Plot all seeds vs wd/beta^2. Compare fixed k=2, free exponent k and 2D quadratic logistic with fixed ridge and leave-one-beta-out loss. Also test overlap of ratio-transformed empirical boundary brackets. Do not call unique x values exact collapse.",
+    "D": "align strict G by own t50; pre=lastinitialtest<=.10, post=firsttest>=.9,500-step grid. NonG is not automatically unordered. Separately report high-generalization nonG, partial, lowtest<=.10 and unlearned. Match adjacent beta/wd cells same seed at same absolute G window. Report delta D and fold, do not search D thresholds.",
+    "ordered_word": "Descriptive rule organization only; no thermodynamic phase assertion."
+  },
+  "refinement": {
+    "max_extra_runs": 15,
+    "max_rows": 1,
+    "rule": "After complete basegrid, at each existing beta choose at most one geometric midpoint in wd of adjacent cells with a change in strict G fraction; prioritize brackets separating3/3 and0/3, then greatest fraction contrast, then closest to0.5, then smallest wd. Exactly same three seeds/topology/100k. If no fraction-change brackets, do not invent a boundary or extend indefinitely.",
+    "retain_base_data": true
+  },
+  "resources": {
+    "allowed_physical": [
+      1,
+      3,
+      4
+    ],
+    "seed_to_gpu_fixed": true,
+    "MPS": true,
+    "no_scheduled_tasks": true,
+    "original_readonly": true
+  },
+  "completion": "Report all75 plus at most15 allowed refinement runs. Positive outcomes cannot be guaranteed. If still unresolved, give evidence and exact remaining gap; no further topology or seed expansion."
+}

@@ -1,0 +1,180 @@
+{
+  "overall": {
+    "n": 192,
+    "ever90": 106,
+    "strict": 32,
+    "final90": 106
+  },
+  "by_mode": {
+    "1": {
+      "n": 48,
+      "ever90": 28,
+      "strict": 5,
+      "final90": 28
+    },
+    "2": {
+      "n": 48,
+      "ever90": 20,
+      "strict": 2,
+      "final90": 20
+    },
+    "4": {
+      "n": 48,
+      "ever90": 27,
+      "strict": 9,
+      "final90": 27
+    },
+    "8": {
+      "n": 48,
+      "ever90": 31,
+      "strict": 16,
+      "final90": 31
+    }
+  },
+  "by_H": {
+    "3": {
+      "n": 12,
+      "ever90": 0,
+      "strict": 0,
+      "final90": 0
+    },
+    "4": {
+      "n": 12,
+      "ever90": 0,
+      "strict": 0,
+      "final90": 0
+    },
+    "5": {
+      "n": 12,
+      "ever90": 0,
+      "strict": 0,
+      "final90": 0
+    },
+    "6": {
+      "n": 12,
+      "ever90": 0,
+      "strict": 0,
+      "final90": 0
+    },
+    "7": {
+      "n": 12,
+      "ever90": 0,
+      "strict": 0,
+      "final90": 0
+    },
+    "8": {
+      "n": 12,
+      "ever90": 4,
+      "strict": 4,
+      "final90": 4
+    },
+    "9": {
+      "n": 12,
+      "ever90": 3,
+      "strict": 3,
+      "final90": 3
+    },
+    "10": {
+      "n": 12,
+      "ever90": 9,
+      "strict": 7,
+      "final90": 9
+    },
+    "12": {
+      "n": 24,
+      "ever90": 22,
+      "strict": 11,
+      "final90": 22
+    },
+    "14": {
+      "n": 12,
+      "ever90": 11,
+      "strict": 7,
+      "final90": 11
+    },
+    "15": {
+      "n": 12,
+      "ever90": 12,
+      "strict": 0,
+      "final90": 12
+    },
+    "16": {
+      "n": 12,
+      "ever90": 11,
+      "strict": 0,
+      "final90": 11
+    },
+    "20": {
+      "n": 12,
+      "ever90": 11,
+      "strict": 0,
+      "final90": 11
+    },
+    "21": {
+      "n": 12,
+      "ever90": 12,
+      "strict": 0,
+      "final90": 12
+    },
+    "28": {
+      "n": 12,
+      "ever90": 11,
+      "strict": 0,
+      "final90": 11
+    }
+  },
+  "within_ever90_vs_final90_mismatches": 0,
+  "grouped_by_strict_seed_count": {
+    "0": 47,
+    "1": 7,
+    "2": 5,
+    "3": 5
+  },
+  "grouped_by_t50_seed_count": {
+    "0": 23,
+    "1": 2,
+    "2": 7,
+    "3": 32
+  },
+  "fully_strict_configs": [
+    [
+      2,
+      4,
+      8
+    ],
+    [
+      2,
+      7,
+      4
+    ],
+    [
+      2,
+      7,
+      8
+    ],
+    [
+      3,
+      4,
+      8
+    ],
+    [
+      4,
+      3,
+      8
+    ]
+  ],
+  "archived_label_and_raw_input_hash_matches": 192,
+  "points_per_run": 202,
+  "history_rows": 38784,
+  "native_source": "/home/chenzhe/work/tglt_experiments/week/v1/code/exp2_sequence_local_grokking.py",
+  "native_source_sha256": "e419f0d77f35fecd70d1b1d19a5338a6408ed4209aff0d70c892a355ec600f73",
+  "label_source": "/home/chenzhe/work/tglt_experiments/analysis/firstgen_beta_wd_phase_20261027/source/strict_label_source.py",
+  "label_source_sha256": "1ab9f16abb9ec935674d77ece233daee772fd7a12bd9fae800ee37fb3ae521df",
+  "checked_roster": "/home/chenzhe/work/tglt_experiments/analysis/firstgen_addition_numbered_label_audit_20261026/all_192_numbered.csv",
+  "roster_sha256": "6b4e4082a544dc8952e3ff75a17175e987a773c1f33a015dc9733a6428bc6826",
+  "manifest": "/home/chenzhe/work/tglt_experiments/week/v1/run_manifest.json",
+  "history_accuracy_reconstruction": "correct count divided by split size for every recorded step",
+  "labels": "train>=.99, consecutive test<=.10 from memorization for >=10000 steps, first test>=.90 with positive transition width strictly less than half the plateau",
+  "alignment": "At least 50% on all three seeds: linear interpolation for individual t50, translation only, all three present on every averaged point. In the alternate view other cells always retain all three on raw time.",
+  "shaded_band": "sample standard deviation among three seeds, clipped to accuracy range only for display"
+}

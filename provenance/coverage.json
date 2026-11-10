@@ -1,0 +1,26 @@
+{
+  "prepared_at": "2026-11-11",
+  "repository": "https://github.com/czhe1234/TGLT-Grokking",
+  "upload_state": "preview_only_no_project_files_uploaded",
+  "native_source_sha256": "e419f0d77f35fecd70d1b1d19a5338a6408ed4209aff0d70c892a355ec600f73",
+  "total_runs": 297,
+  "architecture_runs": 192,
+  "beta_wd_runs": 105,
+  "architecture_terminal_steps": {
+    "100000": 192
+  },
+  "beta_wd_terminal_steps": {
+    "300000": 78,
+    "100000": 27
+  },
+  "history_rows": 91194,
+  "figures": 13,
+  "source_files": 1118,
+  "all_history_regular_500_steps_complete": true,
+  "continuation_prefix_train_test_records_identical": true,
+  "all_original_source_hashes_still_match": true,
+  "checkpoint_files_included": false,
+  "new_training_steps": 0,
+  "draft_included": false,
+  "other_model_generations_included": false
+}

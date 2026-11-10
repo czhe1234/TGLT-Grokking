@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+.env
+.env.*
+*.pem
+*.key
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+activations/
+reproduced/
+new_runs/
+*.log
