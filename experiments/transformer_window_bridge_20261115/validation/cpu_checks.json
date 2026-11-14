@@ -1,0 +1,31 @@
+{
+  "data_sha256": "84f73d45c9751077bf74a2d24364348591eed4aff6336cc5eeba947d5bccde35",
+  "data_sizes": [
+    870,
+    2611
+  ],
+  "passed": true,
+  "native_transformer_max_error": 1.7763568394002505e-15,
+  "native_head_gradient_max_error": 6.938893903907228e-17,
+  "parameters": {
+    "7": 109051,
+    "8": 109051,
+    "12": 109051,
+    "15": 109051,
+    "None": 109051
+  },
+  "window15_matches_global": true,
+  "W7_input_a_independent": true,
+  "shared_interfaces_match_tglt": true,
+  "initial_hash_per_seed": [
+    "1625a3bff81c366dc9f87ebb1a202aa96866f3bf72ea9c4852bb93cea5b88939",
+    "69250e4d95b0766d289a9500a99c79405a6b1a2bab4d8817da77a4d2f7ddd01c",
+    "27ce7adb6de4d47386ca3f12c8231b637ebd0b0e7fba38ebcee3959fe957a479"
+  ],
+  "no_bias_decay": true,
+  "source_hashes": {
+    "source/exp2_window_transformer.py": "178dcd44fa9796f9830517c1b51c3f8baf91cc5f383025ccfb723c186be8977c",
+    "source/exp2_sequence_local_grokking.py": "e419f0d77f35fecd70d1b1d19a5338a6408ed4209aff0d70c892a355ec600f73",
+    "source/strict_grokking.py": "db5503497f72d048648fc14e3475de615bfdb8c2b8f5e0d557e3ae1b6c7f3e39"
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "passed": true,
+  "training_runs": 15,
+  "checkpoints": 3015,
+  "history_points": 3015,
+  "final_checks": [
+    {
+      "run_id": "transformer_W07_s0",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 0.067816091954023,
+      "final_test": 0.0,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W07_s1",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 0.067816091954023,
+      "final_test": 0.0,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W07_s2",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+      "final_train": 0.067816091954023,
+      "final_test": 0.0,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W08_s0",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.0007659900421294523,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W08_s1",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.0034469551895825352,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W08_s2",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+      "final_train": 1.0,
+      "final_test": 0.002297970126388357,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W12_s0",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.0011489850631941786,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W12_s1",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.003063960168517809,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W12_s2",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+      "final_train": 1.0,
+      "final_test": 0.0019149751053236309,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W15_s0",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.13251627728839524,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W15_s1",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.14170815779394869,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_W15_s2",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.13864419762543087,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_global_s0",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.13251627728839524,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_global_s1",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.14170815779394869,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    },
+    {
+      "run_id": "transformer_global_s2",
+      "saved_points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.13864419762543087,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000
+    }
+  ],
+  "initialization_matched": true,
+  "global_equivalence": [
+    {
+      "seed": 0,
+      "max_history_differences": {
+        "train_acc": 0.0,
+        "test_acc": 0.0,
+        "train_ce": 0.0,
+        "test_ce": 0.0
+      },
+      "max_final_state_difference": 0.0
+    },
+    {
+      "seed": 1,
+      "max_history_differences": {
+        "train_acc": 0.0,
+        "test_acc": 0.0,
+        "train_ce": 0.0,
+        "test_ce": 0.0
+      },
+      "max_final_state_difference": 0.0
+    },
+    {
+      "seed": 2,
+      "max_history_differences": {
+        "train_acc": 0.0,
+        "test_acc": 0.0,
+        "train_ce": 0.0,
+        "test_ce": 0.0
+      },
+      "max_final_state_difference": 0.0
+    }
+  ],
+  "mechanism_runs": 12,
+  "mechanism_points": 1812,
+  "max_partition_error": 1.1723955140041653e-12,
+  "swanlab_runs": 15,
+  "swanlab_scalars_verified": 18090,
+  "saved_only_redraw_matches": true,
+  "figure_sha256": {
+    "04_H12_全部seed的条件贡献.png": "0e9be20addd19dea0b7433c69ab46a8ef7d70eff7d107a82e025afb9f5590eee",
+    "06_终点单Mode与单Head消融.png": "0aae8d74867fa15cc8e3d109b299e133e756b6d7f702ba1b80c65723b1759f79",
+    "01_Transformer全部训练测试曲线.png": "9548cddb0c8186cef612fe667da7f198fdc84b2ae625e8b235a84da6e502893d",
+    "04_H08_全部seed的条件贡献.png": "be6ef991419275664e7587f3d54dca6883b0e968c217b2306d0a75eb32f47250",
+    "02_TGLT与Transformer平均曲线.png": "15052f64afae017b4f724f04660825cd6f8589d31d7913d9f3e310334ed62bbf",
+    "05_第1层反事实位置替换.png": "0190562ed660601e0105549409119bd2e143a9007f079297dfa9d03bbcca710e",
+    "03_Mode与Head机制对照.png": "f9e2257bde35fce94b1e3ec10464b5746086b904b310ad8c94cd9c2912ce4160"
+  }
+}

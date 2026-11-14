@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "step": 76000,
+  "native_query_error": 1.7053025658242404e-13,
+  "conditional_partition_error": 1.1368683772161603e-13,
+  "position_rows": 32,
+  "all_geometric_zeros_verified": true
+}

@@ -1,0 +1,60 @@
+{
+  "task": "modular addition",
+  "p": 59,
+  "positions": [
+    0,
+    7,
+    15
+  ],
+  "seq_len": 16,
+  "split_seed": 0,
+  "train_count": 870,
+  "test_count": 2611,
+  "d_model": 64,
+  "layers": 2,
+  "heads": 4,
+  "ffn_hidden": 256,
+  "activation": "gelu",
+  "post_norm": true,
+  "dropout": 0,
+  "windows": [
+    7,
+    8,
+    12,
+    15,
+    null
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "steps": 100000,
+  "save_every": 500,
+  "lr": 0.001,
+  "wd": 0.1,
+  "adam_betas": [
+    0.9,
+    0.98
+  ],
+  "adam_eps": 1e-8,
+  "batch_size": 870,
+  "warmup_steps": 100,
+  "gradient_clip": 1,
+  "dtype": "float32",
+  "tf32": false,
+  "no_decay": [
+    "all biases including in_proj_bias",
+    "all LayerNorm parameters"
+  ],
+  "attention_mask": "abs(i-j)>W forbidden; self and both directions allowed; no causal/padding mask",
+  "execution": "CUDA graph; fused AdamW; no mixed precision; no early stop",
+  "strict_criterion": "Unchanged audit from experimental 1; continuous test<=10% from first train>=99% for at least10k; first90 minus last contiguous low point is positive and less than half plateau. width_10_90 separately first10 to first90.",
+  "initialization": "same seed TGLT embedding and final readout; independent blocks seed10000+seed; all windows identical trainable initialization",
+  "mechanism": "L2 components with frozen native norms; Transformer FFN GELU gains additionally frozen for exact conditional decomposition; interventions recompute actual attention/FFN/norms",
+  "allow_gpu_uuids": [
+    "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+    "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160"
+  ]
+}

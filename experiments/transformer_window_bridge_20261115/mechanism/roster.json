@@ -1,0 +1,86 @@
+[
+  {
+    "kind": "TGLT",
+    "window": 8,
+    "seed": 0,
+    "run_id": "r2_T4_M4_seed0",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r2_T4_M4_seed0"
+  },
+  {
+    "kind": "TGLT",
+    "window": 8,
+    "seed": 1,
+    "run_id": "r2_T4_M4_seed1",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r2_T4_M4_seed1"
+  },
+  {
+    "kind": "TGLT",
+    "window": 8,
+    "seed": 2,
+    "run_id": "r2_T4_M4_seed2",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r2_T4_M4_seed2"
+  },
+  {
+    "kind": "TGLT",
+    "window": 12,
+    "seed": 0,
+    "run_id": "r3_T4_M4_seed0",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r3_T4_M4_seed0"
+  },
+  {
+    "kind": "TGLT",
+    "window": 12,
+    "seed": 1,
+    "run_id": "r3_T4_M4_seed1",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r3_T4_M4_seed1"
+  },
+  {
+    "kind": "TGLT",
+    "window": 12,
+    "seed": 2,
+    "run_id": "r3_T4_M4_seed2",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r3_T4_M4_seed2"
+  },
+  {
+    "kind": "Transformer",
+    "window": 8,
+    "seed": 0,
+    "run_id": "transformer_W08_s0",
+    "path": "/home/chenzhe/work/tglt_experiments/experiments/firstgen_transformer_bridge_20261115/runs/transformer_W08_s0"
+  },
+  {
+    "kind": "Transformer",
+    "window": 8,
+    "seed": 1,
+    "run_id": "transformer_W08_s1",
+    "path": "/home/chenzhe/work/tglt_experiments/experiments/firstgen_transformer_bridge_20261115/runs/transformer_W08_s1"
+  },
+  {
+    "kind": "Transformer",
+    "window": 8,
+    "seed": 2,
+    "run_id": "transformer_W08_s2",
+    "path": "/home/chenzhe/work/tglt_experiments/experiments/firstgen_transformer_bridge_20261115/runs/transformer_W08_s2"
+  },
+  {
+    "kind": "Transformer",
+    "window": 12,
+    "seed": 0,
+    "run_id": "transformer_W12_s0",
+    "path": "/home/chenzhe/work/tglt_experiments/experiments/firstgen_transformer_bridge_20261115/runs/transformer_W12_s0"
+  },
+  {
+    "kind": "Transformer",
+    "window": 12,
+    "seed": 1,
+    "run_id": "transformer_W12_s1",
+    "path": "/home/chenzhe/work/tglt_experiments/experiments/firstgen_transformer_bridge_20261115/runs/transformer_W12_s1"
+  },
+  {
+    "kind": "Transformer",
+    "window": 12,
+    "seed": 2,
+    "run_id": "transformer_W12_s2",
+    "path": "/home/chenzhe/work/tglt_experiments/experiments/firstgen_transformer_bridge_20261115/runs/transformer_W12_s2"
+  }
+]
