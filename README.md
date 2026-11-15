@@ -6,7 +6,8 @@
 
 ## 先看什么
 
-- [最新：局部窗口 Transformer 对照代码与结果（2026-11-15）](experiments/transformer_window_bridge_20261115/)
+- [最新：强正则与无 FFN 的18条补充实验（2026-11-15）](experiments/transformer_followup_20261115/results/)
+- [首轮：局部窗口 Transformer 对照代码与结果](experiments/transformer_window_bridge_20261115/)
 - [论文草稿原文](paper/sn-article.tex)（[来源与配套文件说明](paper/README.md)）
 - [第一代模型与实际训练设置](docs/architecture.md)
 - [主要结果及证据范围](docs/results.md)
@@ -48,7 +49,50 @@ python scripts/redraw_saved_results.py --kind ablation
 重画文件写入`reproduced/`，不覆盖保留的主图。
 原图的绘制代码保存在`provenance/historical_scripts/`。这些历史脚本带有原服务器路径，不是跨机器直接运行的入口。
 
-## 新增：局部窗口 Transformer 机制对照
+## 补充实验：强正则与无 FFN Transformer
+
+首轮 wd=0.1 的 Transformer 对照未达到90%。本轮保持原位置0/7/15、870/2611划分及三个seed，补充18条运行。入口：[`experiments/transformer_followup_20261115/`](experiments/transformer_followup_20261115/)。
+
+- **T1**：标准两层四头 Transformer，FFN=256，wd=1.0；W=8/12/15，各3个seed，完整训练到150k，109,051参数。
+- **T2**：去掉每层FFN及其对应第二个LayerNorm，保留动态注意力、残差和LayerNorm；wd=0.1，W=8/12/15，各3个seed，完整训练到100k，42,619参数。
+- 两组共有参数的初始值与首轮一致。T2在完整模型初始化后删除FFN，保持两层Attention的初始权重一致。其余优化设置沿用首轮，每500步完整保存。
+
+| 组别 | W | 预算 | 终点测试均值 | 达到90% | 原判据严格Grokking | 10%→90%宽度中位数 |
+|---|---:|---:|---:|---:|---:|---:|
+| T1：FFN256、wd=1 | 8 | 150k | 6.57% | 0/3 | 0/3 | 未形成 |
+| T1：FFN256、wd=1 | 12 | 150k | **99.95%** | **3/3** | **3/3** | **4,500步** |
+| T1：FFN256、wd=1 | 15 | 150k | **100%** | 3/3 | 0/3 | 8,500步 |
+| T2：无FFN、wd=0.1 | 8 | 100k | 0.17% | 0/3 | 0/3 | 未形成 |
+| T2：无FFN、wd=0.1 | 12 | 100k | 0.37% | 0/3 | 0/3 | 未形成 |
+| T2：无FFN、wd=0.1 | 15 | 100k | 17.94% | 0/3 | 0/3 | 未形成 |
+
+18条终点训练准确率均为100%。在共同的100k，T1的W=12/15测试均值已为99.34%/99.03%。严格Grokking沿用首轮固定判据；成功运行仍有真实训练瞬降和测试回落，终点达标不表示跃迁后始终稳定。最低准确率和回落点数见[逐运行汇总](experiments/transformer_followup_20261115/results/逐运行汇总.csv)。
+
+![TGLT和三组Transformer均值对照](experiments/transformer_followup_20261115/results/02_四组模型均值对照.png)
+
+全部6条终点测试达到90%的Transformer及9条原位置TGLT都完成CPU机制回放，共2,715个检查点。条件Margin分解、实际单通道消融和第一层位置替换的核心函数与首轮一致；固定错误类取各自100k或150k终点。Head编号与Mode编号不代表相同功能。
+
+W=12仅保留第二层Head 2，三个seed测试准确率为93.57%、94.33%、70.55%；W=15任意单Head均不超过22.67%。Grokking与通道重组可以同时出现，但不同窗口、seed的最终依赖方式不同。条件贡献冻结LayerNorm分母及FFN的GELU乘性因子；真正的消融重新计算下游运算。单位置影响的归一化份额不是可加因果贡献。
+
+- [全部18条训练/测试曲线](experiments/transformer_followup_20261115/results/01_全部18条训练测试曲线.png)
+- [W=12全部成功Head轨迹](experiments/transformer_followup_20261115/results/03_T1_W12_全部达标Head轨迹.png)、[W=15全部成功Head轨迹](experiments/transformer_followup_20261115/results/03_T1_W15_全部达标Head轨迹.png)
+- [逐seed单Mode/Head消融](experiments/transformer_followup_20261115/results/07_逐seed单通道消融.png)
+- [W=8第一层位置替换](experiments/transformer_followup_20261115/results/05_W08_第1层位置替换.png)、[W=12位置替换](experiments/transformer_followup_20261115/results/05_W12_第1层位置替换.png)、[W=15位置替换](experiments/transformer_followup_20261115/results/05_W15_第1层位置替换.png)
+- [逐通道三阶段贡献与份额](experiments/transformer_followup_20261115/results/逐通道三阶段贡献及符号变化.csv)、[完整新训练记录](experiments/transformer_followup_20261115/results/18条完整训练记录.csv)
+- [全部15张图与汇总表](experiments/transformer_followup_20261115/results/)、[机制数据](experiments/transformer_followup_20261115/mechanism/)、[每条运行的原配置与源码哈希](experiments/transformer_followup_20261115/records/)
+
+验证通过：4,518个完整检查点，终点及2,715个机制回放点的答对数均与原日志一致；27,108个SwanLab标量、5,430个均值/标准差数据点逐值核对。保存原[训练与分析核验](experiments/transformer_followup_20261115/validation/completion_checks.json)以及[检查点路径和哈希](experiments/transformer_followup_20261115/validation/checkpoint_manifest.csv)。模型权重留在服务器。
+
+仓库保留本轮源码快照：[`src/exp2_window_transformer_followup.py`](src/exp2_window_transformer_followup.py)，首轮模块保持原版本。历史18条基准曲线通过仓库内链接复用；新18条完整history、配置、来源哈希与判定保存在`records/`。无需检查点即可重画全部15张图：
+
+```bash
+cd experiments/transformer_followup_20261115
+python postprocess.py --saved
+```
+
+输出到仓库根目录的`reproduced/transformer_followup_20261115/`。重画依赖`requirements.txt`及原环境中的Noto Sans CJK中文字体。已在没有检查点、原始数据根目录不可用的独立目录重画，15张PNG与原图逐字节一致，见[发布复现核验](experiments/transformer_followup_20261115/validation/publication_checks.json)。服务器原件位于`/home/chenzhe/work/tglt_experiments/experiments/firstgen_transformer_followup_20261115/`；训练与分析脚本保留实际环境和来源路径。独立SwanLab看板为本地SSH转发后的`http://127.0.0.1:16098/charts`，不是公网看板。
+
+## 首轮：局部窗口 Transformer 机制对照（wd=0.1）
 
 `src/exp2_window_transformer.py` 提供标准动态四头注意力模块；实验入口在
 `experiments/transformer_window_bridge_20261115/`。这是新增实验，与上面的历史 297 条运行分开记录。

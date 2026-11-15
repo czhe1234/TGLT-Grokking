@@ -1,0 +1,17 @@
+{
+  "pid": 4190214,
+  "gpu_uuid": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+  "gpu_name": "NVIDIA A800 80GB PCIe",
+  "python": "3.8.20",
+  "torch": "2.4.1+cu121",
+  "parameter_count": 109051,
+  "initial_parameter_hash": "fee33201cf9667339e1d306e287e7fc5e3b0063b2b4f32c8182a5301f51c4a15",
+  "data_sha256": "84f73d45c9751077bf74a2d24364348591eed4aff6336cc5eeba947d5bccde35",
+  "code_hashes": {
+    "train.py": "3a0559790b158c2ebdd4a1871c8c66f7e85e46469c5353b410331c70c67dbf8b",
+    "source/exp2_window_transformer.py": "8a7b16de1dfd799b6d80598040e312bc25762d0749a5b05a9de5cc590eb777cb",
+    "source/strict_grokking.py": "db5503497f72d048648fc14e3475de615bfdb8c2b8f5e0d557e3ae1b6c7f3e39",
+    "source/exp2_sequence_local_grokking.py": "e419f0d77f35fecd70d1b1d19a5338a6408ed4209aff0d70c892a355ec600f73",
+    "config.json": "2a6d473c8460eca7d419a620c64f5bdb8aa85688fa02bfa38114caccae826329"
+  }
+}

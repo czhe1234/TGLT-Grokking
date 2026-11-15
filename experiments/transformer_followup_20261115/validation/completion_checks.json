@@ -1,0 +1,545 @@
+{
+  "passed": true,
+  "training_runs": 18,
+  "checkpoints": 4518,
+  "expected_checkpoints": 4518,
+  "history_points": 4518,
+  "final_checks": [
+    {
+      "run_id": "T1_W08_s0",
+      "group": "T1",
+      "window": 8,
+      "seed": 0,
+      "budget": 150000,
+      "points": 301,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.031405591727307544,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 150000,
+      "decay_groups": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T1_W08_s1",
+      "group": "T1",
+      "window": 8,
+      "seed": 1,
+      "budget": 150000,
+      "points": 301,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.009574875526618154,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 150000,
+      "decay_groups": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T1_W08_s2",
+      "group": "T1",
+      "window": 8,
+      "seed": 2,
+      "budget": 150000,
+      "points": 301,
+      "gpu_uuid": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+      "final_train": 1.0,
+      "final_test": 0.15626196859440827,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 150000,
+      "decay_groups": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T2_W08_s0",
+      "group": "T2",
+      "window": 8,
+      "seed": 0,
+      "budget": 100000,
+      "points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.0011489850631941786,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000,
+      "decay_groups": [
+        0.1,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T2_W08_s1",
+      "group": "T2",
+      "window": 8,
+      "seed": 1,
+      "budget": 100000,
+      "points": 201,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.0015319800842589046,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000,
+      "decay_groups": [
+        0.1,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T2_W08_s2",
+      "group": "T2",
+      "window": 8,
+      "seed": 2,
+      "budget": 100000,
+      "points": 201,
+      "gpu_uuid": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+      "final_train": 1.0,
+      "final_test": 0.002297970126388357,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000,
+      "decay_groups": [
+        0.1,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T1_W12_s0",
+      "group": "T1",
+      "window": 12,
+      "seed": 0,
+      "budget": 150000,
+      "points": 301,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 1.0,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 150000,
+      "decay_groups": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T1_W12_s1",
+      "group": "T1",
+      "window": 12,
+      "seed": 1,
+      "budget": 150000,
+      "points": 301,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.9984680199157411,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 150000,
+      "decay_groups": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T1_W12_s2",
+      "group": "T1",
+      "window": 12,
+      "seed": 2,
+      "budget": 150000,
+      "points": 301,
+      "gpu_uuid": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+      "final_train": 1.0,
+      "final_test": 1.0,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 150000,
+      "decay_groups": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T2_W12_s0",
+      "group": "T2",
+      "window": 12,
+      "seed": 0,
+      "budget": 100000,
+      "points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.002680965147453083,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000,
+      "decay_groups": [
+        0.1,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T2_W12_s1",
+      "group": "T2",
+      "window": 12,
+      "seed": 1,
+      "budget": 100000,
+      "points": 201,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.005744925315970892,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000,
+      "decay_groups": [
+        0.1,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T2_W12_s2",
+      "group": "T2",
+      "window": 12,
+      "seed": 2,
+      "budget": 100000,
+      "points": 201,
+      "gpu_uuid": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+      "final_train": 1.0,
+      "final_test": 0.002680965147453083,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000,
+      "decay_groups": [
+        0.1,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T1_W15_s0",
+      "group": "T1",
+      "window": 15,
+      "seed": 0,
+      "budget": 150000,
+      "points": 301,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 1.0,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 150000,
+      "decay_groups": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T1_W15_s1",
+      "group": "T1",
+      "window": 15,
+      "seed": 1,
+      "budget": 150000,
+      "points": 301,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 1.0,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 150000,
+      "decay_groups": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T1_W15_s2",
+      "group": "T1",
+      "window": 15,
+      "seed": 2,
+      "budget": 150000,
+      "points": 301,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 1.0,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 150000,
+      "decay_groups": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T2_W15_s0",
+      "group": "T2",
+      "window": 15,
+      "seed": 0,
+      "budget": 100000,
+      "points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.19302949061662197,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000,
+      "decay_groups": [
+        0.1,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T2_W15_s1",
+      "group": "T2",
+      "window": 15,
+      "seed": 1,
+      "budget": 100000,
+      "points": 201,
+      "gpu_uuid": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+      "final_train": 1.0,
+      "final_test": 0.21256223669092303,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000,
+      "decay_groups": [
+        0.1,
+        0.0
+      ]
+    },
+    {
+      "run_id": "T2_W15_s2",
+      "group": "T2",
+      "window": 15,
+      "seed": 2,
+      "budget": 100000,
+      "points": 201,
+      "gpu_uuid": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+      "final_train": 1.0,
+      "final_test": 0.13251627728839524,
+      "CPU_float64_replay_count_difference": {
+        "train": 0,
+        "test": 0
+      },
+      "optimizer_step": 100000,
+      "decay_groups": [
+        0.1,
+        0.0
+      ]
+    }
+  ],
+  "shared_initialization_matched": true,
+  "mechanism_formula_AST_parity": {
+    "first_layer": true,
+    "native_parts": true,
+    "affine_ln": true,
+    "conditional_partition": true,
+    "endpoints": true
+  },
+  "selected_final90_transformer_runs": 6,
+  "mechanism_runs": 15,
+  "mechanism_points": 2715,
+  "max_partition_error": 1.1723955140041653e-12,
+  "max_final_CPU_replay_difference": 0,
+  "mean_std_points_verified": 5430,
+  "swanlab_runs": 18,
+  "swanlab_scalars_verified": 27108,
+  "mechanism_max_CPU_replay_difference": 0,
+  "figure_outputs": [
+    {
+      "name": "01_全部18条训练测试曲线.png",
+      "sha256": "474575a4d6cfa2b8c1a52d905bae492e2b67fc83f45c84fbf7be353913b3bdf4",
+      "bytes": 584733,
+      "pixels": [
+        2971,
+        3223
+      ]
+    },
+    {
+      "name": "02_四组模型均值对照.png",
+      "sha256": "6ebbce48ef3574dc540aefba5fdf95efda8a7c8faf24b3a52b5d187af815338d",
+      "bytes": 611555,
+      "pixels": [
+        3853,
+        1807
+      ]
+    },
+    {
+      "name": "03_T1_W12_全部达标Head轨迹.png",
+      "sha256": "27bb2a568bc980f7365d69e94f7b2ceaac03a374418330dd830c8f1913a0e1eb",
+      "bytes": 598021,
+      "pixels": [
+        2990,
+        1806
+      ]
+    },
+    {
+      "name": "03_T1_W15_全部达标Head轨迹.png",
+      "sha256": "999201916a103120c478a3d0c455e4b5130c4cb0ce0caaa172117189107a298a",
+      "bytes": 588477,
+      "pixels": [
+        2990,
+        1806
+      ]
+    },
+    {
+      "name": "04_终点单路消融对照.png",
+      "sha256": "d55ea95b93f8a5107f7afc1e80ffc56cfc729f15333617bbeb5fcf11249aedd6",
+      "bytes": 193224,
+      "pixels": [
+        2409,
+        793
+      ]
+    },
+    {
+      "name": "05_W08_第1层位置替换.png",
+      "sha256": "9411eb875dbae9e5b47e8d879ba59a7e2c11b198d247f31a26557fe55f44d244",
+      "bytes": 167829,
+      "pixels": [
+        2652,
+        1563
+      ]
+    },
+    {
+      "name": "05_W12_第1层位置替换.png",
+      "sha256": "c153694c42e69df164b68bb9d33cc8c49cfdc674781e8938ab5c2cb1a78e70ef",
+      "bytes": 268645,
+      "pixels": [
+        2652,
+        2697
+      ]
+    },
+    {
+      "name": "05_W15_第1层位置替换.png",
+      "sha256": "ef263a73a4c4cdba1a126734608359d490bbf59d33c9769a1a3d16eeebd7108b",
+      "bytes": 252928,
+      "pixels": [
+        2652,
+        2697
+      ]
+    },
+    {
+      "name": "06_T1_W12_s0_Mode与Head并排.png",
+      "sha256": "c7a3e795cb7aa7584083d97ee8768cbcd7435b345a0be974f90fe1bd75395257",
+      "bytes": 383500,
+      "pixels": [
+        2266,
+        1806
+      ]
+    },
+    {
+      "name": "06_T1_W12_s1_Mode与Head并排.png",
+      "sha256": "1c6f799967513d13abf4694fbf350451e588c9563b01c34f0c5b8dfe9e092c54",
+      "bytes": 370386,
+      "pixels": [
+        2266,
+        1806
+      ]
+    },
+    {
+      "name": "06_T1_W12_s2_Mode与Head并排.png",
+      "sha256": "7ec2591f7a3449f71c36e738eb99d6b6e9bba776bbbe301e417c56619498fc4e",
+      "bytes": 414449,
+      "pixels": [
+        2266,
+        1806
+      ]
+    },
+    {
+      "name": "06_T1_W15_s0_Mode与Head并排.png",
+      "sha256": "4f99524209539eb859e8de7dadbc7336c6d61a99cb58029b2b0b8c0d0d8ba00c",
+      "bytes": 417820,
+      "pixels": [
+        2266,
+        1806
+      ]
+    },
+    {
+      "name": "06_T1_W15_s1_Mode与Head并排.png",
+      "sha256": "8bad9b20778bf85c6511bb8cf856602dbc3d602040152f152f68f5cd4da51e94",
+      "bytes": 411426,
+      "pixels": [
+        2266,
+        1806
+      ]
+    },
+    {
+      "name": "06_T1_W15_s2_Mode与Head并排.png",
+      "sha256": "633736a75c7ccf323a1838f1a16d6500a666a33180ce7aa2f0f63991987283f6",
+      "bytes": 454117,
+      "pixels": [
+        2258,
+        1806
+      ]
+    },
+    {
+      "name": "07_逐seed单通道消融.png",
+      "sha256": "c5ffa96a1800f6e629749da7920dda369276a76c1f44399508390bc4196fa2b7",
+      "bytes": 411198,
+      "pixels": [
+        2447,
+        1659
+      ]
+    }
+  ],
+  "figure_review": {
+    "surface": "internal_review",
+    "checked_families": [
+      "18_run_curves",
+      "mean_std_comparison",
+      "head_trajectories",
+      "per_seed_ablation",
+      "position_replacements",
+      "mode_head_pairs"
+    ],
+    "checks": [
+      "Chinese_labels",
+      "high_contrast_solid_lines",
+      "common_axes",
+      "first_complete_10_90_only",
+      "100k_budget_regions_marked",
+      "old_criterion_and_accuracy_dips_retained"
+    ],
+    "fixes": "Marked shorter budgets and named strict labels using original criterion; position maps retain all baseline seeds."
+  },
+  "postprocess_sha256": "fce522fcf1065dc41b8da478574e73485c2e57e40144c8659f5053ebaddaa8d5",
+  "mechanism_script_sha256": "717eca87da7cd9f6b298328251091651984e4ae42ee4825c27d44feeef6db479"
+}

@@ -1,0 +1,80 @@
+{
+  "task": "modular addition",
+  "p": 59,
+  "positions": [
+    0,
+    7,
+    15
+  ],
+  "seq_len": 16,
+  "split_seed": 0,
+  "train_count": 870,
+  "test_count": 2611,
+  "d_model": 64,
+  "layers": 2,
+  "heads": 4,
+  "ffn_hidden": 256,
+  "activation": "gelu",
+  "post_norm": true,
+  "dropout": 0,
+  "windows": [
+    8,
+    12,
+    15
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "steps": 150000,
+  "save_every": 500,
+  "lr": 0.001,
+  "wd": 1.0,
+  "adam_betas": [
+    0.9,
+    0.98
+  ],
+  "adam_eps": 1e-08,
+  "batch_size": 870,
+  "warmup_steps": 100,
+  "gradient_clip": 1,
+  "dtype": "float32",
+  "tf32": false,
+  "no_decay": [
+    "all biases including in_proj_bias",
+    "all LayerNorm parameters"
+  ],
+  "attention_mask": "abs(i-j)>W forbidden; self and both directions allowed; no causal/padding mask",
+  "execution": "CUDA graph; fused AdamW; no mixed precision; no early stop",
+  "strict_criterion": "Unchanged audit from experimental 1; continuous test<=10% from first train>=99% for at least10k; first90 minus last contiguous low point is positive and less than half plateau. width_10_90 separately first10 to first90.",
+  "initialization": "T1 identical to original bridge at step0; T2 deletes FFN/norm2 after identical initialization, preserving every shared parameter including both attention blocks.",
+  "mechanism": "Apply unchanged conditional decomposition, actual head ablations and position replacement to every run whose final test accuracy is >=90%; final endpoint is 150k(T1) or100k(T2).",
+  "allow_gpu_uuids": [
+    "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0",
+    "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160"
+  ],
+  "groups": {
+    "T1": {
+      "ffn_hidden": 256,
+      "wd": 1.0,
+      "steps": 150000
+    },
+    "T2": {
+      "ffn_hidden": 0,
+      "wd": 0.1,
+      "steps": 100000
+    }
+  },
+  "total_runs": 18,
+  "baseline_directory": "/home/chenzhe/work/tglt_experiments/experiments/firstgen_transformer_bridge_20261115",
+  "source_commit": "0c3794ce6e0de8ad61792f10eeba1b9be9d2aac8",
+  "stop_rule": "All 18 runs reach their fixed budget. No early stopping. No extra wd=1 attention-only runs in this batch.",
+  "expected_checkpoint_count": 4518,
+  "window": 12,
+  "seed": 0,
+  "run_id": "T1_W12_s0",
+  "exp_group": "T1_W12",
+  "group": "T1"
+}

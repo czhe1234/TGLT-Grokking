@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "run_id": "T1_W12_s0",
+      "step": 44000,
+      "logged_correct": 53,
+      "CPU_float64_correct": 53,
+      "n": 870,
+      "train_acc": 0.06091954022988506,
+      "test_acc": 0.013404825737265416,
+      "train_ce": 4.34591007232666
+    },
+    {
+      "run_id": "T1_W12_s1",
+      "step": 29500,
+      "logged_correct": 233,
+      "CPU_float64_correct": 233,
+      "n": 870,
+      "train_acc": 0.267816091954023,
+      "test_acc": 0.00497893527384144,
+      "train_ce": 2.7852795124053955
+    },
+    {
+      "run_id": "T1_W12_s2",
+      "step": 42500,
+      "logged_correct": 123,
+      "CPU_float64_correct": 123,
+      "n": 870,
+      "train_acc": 0.1413793103448276,
+      "test_acc": 0.028724626579854463,
+      "train_ce": 3.4483225345611572
+    }
+  ],
+  "interpretation": "Short training-accuracy collapses are genuine saved states; retain the frozen strict criterion and expose the dips."
+}

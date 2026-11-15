@@ -15,3 +15,8 @@ activations/
 reproduced/
 new_runs/
 *.log
+
+.venv-*/
+experiments/*/runs/
+*.pid
+*.lock

@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "redrawn_without_checkpoints": true,
+  "source_root_unavailable": true,
+  "figures": 15,
+  "all_PNG_bytes_identical": true,
+  "archived_histories": 36,
+  "training_runs": 18,
+  "baseline_histories": 18,
+  "figures_verified": [
+    {
+      "name": "01_全部18条训练测试曲线.png",
+      "sha256": "474575a4d6cfa2b8c1a52d905bae492e2b67fc83f45c84fbf7be353913b3bdf4",
+      "identical": true
+    },
+    {
+      "name": "02_四组模型均值对照.png",
+      "sha256": "6ebbce48ef3574dc540aefba5fdf95efda8a7c8faf24b3a52b5d187af815338d",
+      "identical": true
+    },
+    {
+      "name": "03_T1_W12_全部达标Head轨迹.png",
+      "sha256": "27bb2a568bc980f7365d69e94f7b2ceaac03a374418330dd830c8f1913a0e1eb",
+      "identical": true
+    },
+    {
+      "name": "03_T1_W15_全部达标Head轨迹.png",
+      "sha256": "999201916a103120c478a3d0c455e4b5130c4cb0ce0caaa172117189107a298a",
+      "identical": true
+    },
+    {
+      "name": "04_终点单路消融对照.png",
+      "sha256": "d55ea95b93f8a5107f7afc1e80ffc56cfc729f15333617bbeb5fcf11249aedd6",
+      "identical": true
+    },
+    {
+      "name": "05_W08_第1层位置替换.png",
+      "sha256": "9411eb875dbae9e5b47e8d879ba59a7e2c11b198d247f31a26557fe55f44d244",
+      "identical": true
+    },
+    {
+      "name": "05_W12_第1层位置替换.png",
+      "sha256": "c153694c42e69df164b68bb9d33cc8c49cfdc674781e8938ab5c2cb1a78e70ef",
+      "identical": true
+    },
+    {
+      "name": "05_W15_第1层位置替换.png",
+      "sha256": "ef263a73a4c4cdba1a126734608359d490bbf59d33c9769a1a3d16eeebd7108b",
+      "identical": true
+    },
+    {
+      "name": "06_T1_W12_s0_Mode与Head并排.png",
+      "sha256": "c7a3e795cb7aa7584083d97ee8768cbcd7435b345a0be974f90fe1bd75395257",
+      "identical": true
+    },
+    {
+      "name": "06_T1_W12_s1_Mode与Head并排.png",
+      "sha256": "1c6f799967513d13abf4694fbf350451e588c9563b01c34f0c5b8dfe9e092c54",
+      "identical": true
+    },
+    {
+      "name": "06_T1_W12_s2_Mode与Head并排.png",
+      "sha256": "7ec2591f7a3449f71c36e738eb99d6b6e9bba776bbbe301e417c56619498fc4e",
+      "identical": true
+    },
+    {
+      "name": "06_T1_W15_s0_Mode与Head并排.png",
+      "sha256": "4f99524209539eb859e8de7dadbc7336c6d61a99cb58029b2b0b8c0d0d8ba00c",
+      "identical": true
+    },
+    {
+      "name": "06_T1_W15_s1_Mode与Head并排.png",
+      "sha256": "8bad9b20778bf85c6511bb8cf856602dbc3d602040152f152f68f5cd4da51e94",
+      "identical": true
+    },
+    {
+      "name": "06_T1_W15_s2_Mode与Head并排.png",
+      "sha256": "633736a75c7ccf323a1838f1a16d6500a666a33180ce7aa2f0f63991987283f6",
+      "identical": true
+    },
+    {
+      "name": "07_逐seed单通道消融.png",
+      "sha256": "c5ffa96a1800f6e629749da7920dda369276a76c1f44399508390bc4196fa2b7",
+      "identical": true
+    }
+  ],
+  "original_postprocess_sha256": "fce522fcf1065dc41b8da478574e73485c2e57e40144c8659f5053ebaddaa8d5",
+  "published_postprocess_sha256": "72875ffc6fa77143e5e4222ef5a2de0217e82cb6a1529a4f8a4ed71b63bd5c46"
+}

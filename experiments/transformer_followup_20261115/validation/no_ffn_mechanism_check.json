@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "run_id": "T2_W08_s0",
+  "step": 100000,
+  "n": 50,
+  "native_path_error": 4.263256414560601e-14,
+  "partition_error": 4.973799150320701e-14,
+  "ffn_absent": true
+}
