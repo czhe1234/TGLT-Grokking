@@ -2,10 +2,10 @@
   "figures": 4,
   "checkpoint_free_replot_identical": true,
   "sha256": {
-    "01_空间两点关联.png": "0ca8f9c3391ee3d1a1a161b98f204bf2778d79b900a0516f7ae418c5b89064e0",
-    "02_输入到查询的线性响应.png": "9b5c0c871b6905bdb19cea6cea98c725ed6c1879e8fdd23e0c7c270b481dd1cc",
+    "01_空间两点关联.png": "26d5d363f60032b5c859c7cf3bd7619404a2a2a39f58b53aeb9da1ecc4de7623",
+    "02_输入到查询的线性响应.png": "75723818b3e8aa216f2f13cf265d692af1f074b12b5dd7109d121054e78a1b20",
     "03_写回谱熵与有效参与率.png": "370d1581e060a1e352a8cf61c260e3f773b828113d7c650f9e1be777d0f57646",
     "04_Mode3与Mode4写回重叠.png": "94f2a2e984ac972e0463445f12ab121127131a51e5d7ed90c4c2e158b0fedecd"
   },
-  "layout": "Title and subtitle use a fixed physical separation; CJK font verified by visual inspection"
+  "layout": "CJK font, fixed header gap, one primary response row; all full curves and common axes retained"
 }

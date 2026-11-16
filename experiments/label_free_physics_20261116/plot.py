@@ -60,16 +60,15 @@ def make_plots(data):
     for i,(metric,title) in enumerate(specs):
         for j,span in enumerate(spans):
             ax=axes[i,j];panel(ax,data,metric,span);ax.set_ylabel('归一化关联')
-            pair='0 → %d'%(span if metric.endswith('q') else 7 if span==15 else 5)
+            pair='位置0与%d'%(span if metric.endswith('q') else 7 if span==15 else 5)
             ax.set_title('%s  |  %s'%(title,pair),loc='left')
         shared_limits(axes[i])
     finish(fig,'01_空间两点关联.png','空间两点关联：远处的状态是否共同变化？','左列：原跨度15，含成功/未泛化对照。右列：跨度11，三个seed后来都达90%。')
-    fig,axes=plt.subplots(2,2,figsize=(15,9));fig.subplots_adjust(top=.84,bottom=.1,hspace=.48,wspace=.2)
-    for i,(metric,label) in enumerate([('chi_mean','逐输入响应范数的平均'),('chi_rms','逐输入响应范数的均方根')]):
-        for j,span in enumerate(spans):
-            panel(axes[i,j],data,metric,span);axes[i,j].set_ylabel('输入响应强度')
-            axes[i,j].set_title('跨度%d · %s'%(span,label),loc='left')
-        shared_limits(axes[i])
+    fig,axes=plt.subplots(1,2,figsize=(15,5.6));fig.subplots_adjust(top=.73,bottom=.17,wspace=.2)
+    for j,span in enumerate(spans):
+        panel(axes[j],data,'chi_mean',span);axes[j].set_ylabel('输入响应强度')
+        axes[j].set_title('跨度%d · 全部输入的平均响应'%span,loc='left')
+    shared_limits(axes)
     finish(fig,'02_输入到查询的线性响应.png','线性响应：输入端的微小变化能传多强？','精确64×64响应矩阵，保留两层LayerNorm导数；第一层端到端响应因几何不可达而严格为0。')
     fig,axes=plt.subplots(2,2,figsize=(15,9));fig.subplots_adjust(top=.84,bottom=.1,hspace=.48,wspace=.2)
     for i,(metric,label) in enumerate([('S_total','写回谱熵（自然对数）'),('D_total','有效参与维数')]):
