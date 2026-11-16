@@ -1,0 +1,10 @@
+{
+  "figures": 4,
+  "checkpoint_free_replot_identical": true,
+  "sha256": {
+    "01_空间两点关联.png": "eb46a91a667a7639f03088b1d2395bddecf6034f81063568f65cbb090921bf6f",
+    "02_输入到查询的线性响应.png": "12ee9e24092f96fb71339c594d9cf6e95e79ad87b099fe99cea4fd21d7e7ed00",
+    "03_写回谱熵与有效参与率.png": "7c06aee95695123cf7a10b8062823fd57e863d04bdb8b0892837bac774e0148d",
+    "04_Mode3与Mode4写回重叠.png": "ecb95c92882d5aeddacd819eaa2d66eb0eee13f8e29ed45c7d29f0f8beebf8b3"
+  }
+}

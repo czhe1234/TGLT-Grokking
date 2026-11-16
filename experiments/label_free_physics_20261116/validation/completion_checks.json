@@ -1,0 +1,20 @@
+{
+  "checkpoints": 325,
+  "runs": 5,
+  "input_count": 3481,
+  "primary_scalar_points": 2600,
+  "no_missing_steps": true,
+  "source_hashes_verified": 325,
+  "checkpoint_geometry_verified": 325,
+  "source_sha256": "e419f0d77f35fecd70d1b1d19a5338a6408ed4209aff0d70c892a355ec600f73",
+  "CPU_only": true,
+  "training_steps": 0,
+  "target_labels_used": false,
+  "all_covariances_nondegenerate": true,
+  "jacobian_validation_cases": 15,
+  "jacobian_max_error": 1.9984014443252818e-15,
+  "finite_difference_max_error": 4.030956540779229e-10,
+  "analysis_start_commit": "9e0ba02",
+  "source_records": "sources.csv",
+  "limits": "One original success/failure pair; no seed-level significance test"
+}
