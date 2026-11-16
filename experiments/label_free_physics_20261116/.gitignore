@@ -1,0 +1,3 @@
+swanlab/logs/
+*.pid
+*.lock

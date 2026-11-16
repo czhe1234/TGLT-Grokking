@@ -1,0 +1,22 @@
+{
+  "scope": "H8 original span15 seeds0,1; shifted span11 seeds0,1,2; all existing checkpoints0..40000; CPU float64, no training",
+  "input_ensemble": "All3481 ordered input pairs, equally weighted. Construct token/role arrays directly. Never construct or load target labels or data split in observable calculation. The ensemble includes held-out inputs, so this is label-free, not held-out-input-free.",
+  "states": "64-dimensional primary states immediately after each block LayerNorm, before final query-only LayerNorm and classifier",
+  "writeback": "Second block at actual query; each mode bilinear contribution after gate,beta and shared out.weight; exclude out.bias; total=sum(mode writes)",
+  "G": "Mean-centered across the fixed input ensemble, normalized inner product; G0q and G0b for both layers, q=15,b=7 or q=11,b=5",
+  "response": "Exact64x64 d h2_query / d embedded_h0_site0, other embedded sites held fixed. Full LayerNorm derivatives. Report mean and RMS Frobenius norm across all3481 inputs; primary curve=mean.",
+  "spectra": "Eigenvalues of centered query writeback covariance / trace. S=-sum p ln(p), natural logarithms. D=1/sum p^2. Total primary, mode3/mode4 retained as supplementary.",
+  "q34": "Centered normalized inner product of actual mode3/mode4 query writes across inputs; undefined for zero variance",
+  "time_alignment": "Absolute training step. Original every1000; shifted every500; no estimated or missing checkpoints filled in.",
+  "outcome_metadata": "Read previous frozen roster, labels refer to100k outcomes only and never enter extraction functions. Shifted seed0 reaches90 with a broad transition; not a failure control.",
+  "separation_rule": {
+    "persistence_steps": 5000,
+    "bounded_G_q34": "absolute baseline-adjusted success-minus-failure difference >=0.1",
+    "entropy": "absolute baseline-adjusted difference >=0.2 natural units",
+    "participation": "abs(log[(D_s/D_f)/(D_s0/D_f0)]))>=log(1.25)",
+    "response": "abs(log[(chi_s/chi_f)/(chi_s0/chi_f0)]))>=log(1.5)",
+    "report": "First episode lasting5000steps; also first episode lasting all the way to40k. Evaluate at actual common1000-step checkpoints. Thresholds descriptive, not a significance test or calibrated warning rule."
+  },
+  "statistical_limits": "One success and one failure do not estimate seed-level significance or warning reliability. Timepoints are not independent replicate runs. Spectrum decrease, response peak or positive overlap need not accompany ordering.",
+  "duplicates_audit": "Existing source records residue Fourier entropy and residue effective dimension, plus label-dependent field and deletion diagnostics. Those are different from writeback-covariance spectra and exact hidden-state input response here. Reuse propagation and writeback formulas."
+}
