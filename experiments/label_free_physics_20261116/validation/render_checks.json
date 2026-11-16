@@ -2,9 +2,10 @@
   "figures": 4,
   "checkpoint_free_replot_identical": true,
   "sha256": {
-    "01_空间两点关联.png": "eb46a91a667a7639f03088b1d2395bddecf6034f81063568f65cbb090921bf6f",
-    "02_输入到查询的线性响应.png": "12ee9e24092f96fb71339c594d9cf6e95e79ad87b099fe99cea4fd21d7e7ed00",
-    "03_写回谱熵与有效参与率.png": "7c06aee95695123cf7a10b8062823fd57e863d04bdb8b0892837bac774e0148d",
-    "04_Mode3与Mode4写回重叠.png": "ecb95c92882d5aeddacd819eaa2d66eb0eee13f8e29ed45c7d29f0f8beebf8b3"
-  }
+    "01_空间两点关联.png": "0ca8f9c3391ee3d1a1a161b98f204bf2778d79b900a0516f7ae418c5b89064e0",
+    "02_输入到查询的线性响应.png": "9b5c0c871b6905bdb19cea6cea98c725ed6c1879e8fdd23e0c7c270b481dd1cc",
+    "03_写回谱熵与有效参与率.png": "370d1581e060a1e352a8cf61c260e3f773b828113d7c650f9e1be777d0f57646",
+    "04_Mode3与Mode4写回重叠.png": "94f2a2e984ac972e0463445f12ab121127131a51e5d7ed90c4c2e158b0fedecd"
+  },
+  "layout": "Title and subtitle use a fixed physical separation; CJK font verified by visual inspection"
 }

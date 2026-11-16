@@ -47,7 +47,7 @@ def shared_limits(axes):
 
 def finish(fig,name,title,subtitle):
     fig.suptitle(title,x=.06,y=.985,ha='left',fontsize=20,fontweight='bold',color='#172F40')
-    fig.text(.06,.94,subtitle,ha='left',fontsize=11,color='#435D70')
+    fig.text(.06,.985-.46/fig.get_size_inches()[1],subtitle,ha='left',va='top',fontsize=11,color='#435D70')
     fig.text(.06,.015,'全部3,481组输入；不使用答案标签。实线连接实际保存点；原跨度每1,000步，新跨度每500步。',fontsize=10,color='#435D70')
     fig.savefig(HERE/'results'/name,facecolor='white');plt.close(fig)
 
@@ -67,7 +67,7 @@ def make_plots(data):
     fig,axes=plt.subplots(2,2,figsize=(15,9));fig.subplots_adjust(top=.84,bottom=.1,hspace=.48,wspace=.2)
     for i,(metric,label) in enumerate([('chi_mean','逐输入响应范数的平均'),('chi_rms','逐输入响应范数的均方根')]):
         for j,span in enumerate(spans):
-            panel(axes[i,j],data,metric,span);axes[i,j].set_ylabel('Jacobian Frobenius 范数')
+            panel(axes[i,j],data,metric,span);axes[i,j].set_ylabel('输入响应强度')
             axes[i,j].set_title('跨度%d · %s'%(span,label),loc='left')
         shared_limits(axes[i])
     finish(fig,'02_输入到查询的线性响应.png','线性响应：输入端的微小变化能传多强？','精确64×64响应矩阵，保留两层LayerNorm导数；第一层端到端响应因几何不可达而严格为0。')
