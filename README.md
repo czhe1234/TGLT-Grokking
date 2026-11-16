@@ -6,7 +6,8 @@
 
 ## 先看什么
 
-- [最新：强正则与无 FFN 的18条补充实验（2026-11-15）](experiments/transformer_followup_20261115/results/)
+- [最新：H=8 无标签内部场观测，5条运行325个检查点（2026-11-16）](experiments/label_free_physics_20261116/)
+- [强正则与无 FFN 的18条补充实验（2026-11-15）](experiments/transformer_followup_20261115/results/)
 - [首轮：局部窗口 Transformer 对照代码与结果](experiments/transformer_window_bridge_20261115/)
 - [论文草稿原文](paper/sn-article.tex)（[来源与配套文件说明](paper/README.md)）
 - [第一代模型与实际训练设置](docs/architecture.md)
