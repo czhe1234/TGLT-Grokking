@@ -44,7 +44,7 @@ def main():
     assert torch.cuda.device_count() == 1 and cuda_uuid() == args.gpu
     run_id = args.group + '_s' + str(args.seed)
     dest = ROOT/('validation' if args.pilot else 'runs')/(('pilot_' if args.pilot else '') + run_id)
-    dest.mkdir(exist_ok=True)
+    dest.mkdir(parents=True, exist_ok=True)
     lock = (dest/'lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     if (dest/'history.csv').exists():

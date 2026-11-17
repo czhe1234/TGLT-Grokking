@@ -27,7 +27,7 @@ def main():
         for group in groups:
             run_id=group+'_s'+str(seed)
             dest=ROOT/'runs'/run_id
-            dest.mkdir(exist_ok=True)
+            dest.mkdir(parents=True, exist_ok=True)
             if (dest/'history.csv').exists():
                 raise RuntimeError('Existing run history; refusing duplicate dispatch: '+run_id)
             cfg=dict(CFG,group=group,seed=seed,gpu_uuid=gpu,run_id=run_id,exp_group='one_layer_'+group,code_commit=commit)

@@ -31,6 +31,7 @@ def main(dest):
     cfg.update(display_group=label,accuracy_unit='百分比',source_history=str(dest/'history.csv'))
     colors = {'multiscale':['#D55E00','#B2182B','#A6761D'],'all_long':['#0072B2','#164A78','#009E73']}
     logdir = ROOT/'swanlab/logs'
+    logdir.mkdir(parents=True, exist_ok=True)
     with (logdir/'.init.lock').open('a') as f:
         fcntl.flock(f,fcntl.LOCK_EX)
         swanlab.init(project='TGLT-One-Layer-Scales',experiment_name='一层_'+label+'_s'+str(seed),
