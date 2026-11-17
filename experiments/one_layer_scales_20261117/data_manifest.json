@@ -1,0 +1,11 @@
+{
+  "sha256": "0254a223a9e19b2a1a10cf6afa1be0fc606f6edd90b951d2dc91940d165cffd2",
+  "sets": {
+    "train": 3480,
+    "test_familiar": 10444,
+    "seen_new": 1740,
+    "test_new": 5222
+  },
+  "train_pairs": 870,
+  "test_pairs": 2611
+}

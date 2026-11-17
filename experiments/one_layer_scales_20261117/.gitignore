@@ -1,0 +1,5 @@
+swanlab/
+status.json
+training_complete.json
+jobs.json
+validation/pilot_*/lock

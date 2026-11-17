@@ -1,0 +1,36 @@
+{
+  "multiscale_s0": {
+    "forward_max_error": 6.661338147750939e-16,
+    "gradient_max_error": 5.551115123125783e-17
+  },
+  "all_long_s0": {
+    "forward_max_error": 8.881784197001252e-16,
+    "gradient_max_error": 1.1102230246251565e-16
+  },
+  "multiscale_s1": {
+    "forward_max_error": 7.771561172376096e-16,
+    "gradient_max_error": 1.1102230246251565e-16
+  },
+  "all_long_s1": {
+    "forward_max_error": 8.881784197001252e-16,
+    "gradient_max_error": 5.551115123125783e-17
+  },
+  "multiscale_s2": {
+    "forward_max_error": 1.3322676295501878e-15,
+    "gradient_max_error": 8.326672684688674e-17
+  },
+  "all_long_s2": {
+    "forward_max_error": 6.661338147750939e-16,
+    "gradient_max_error": 1.1102230246251565e-16
+  },
+  "passed": true,
+  "parameter_counts": {
+    "multiscale": 34911,
+    "all_long": 34911
+  },
+  "data_sha256": "0254a223a9e19b2a1a10cf6afa1be0fc606f6edd90b951d2dc91940d165cffd2",
+  "paired_initialization_identical": true,
+  "label_and_role_checks": true,
+  "geometry_and_pair_split_disjoint": true,
+  "translation_invariance": true
+}
