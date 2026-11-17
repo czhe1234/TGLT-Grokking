@@ -3,3 +3,5 @@ status.json
 training_complete.json
 jobs.json
 validation/pilot_*/lock
+validation/pilot_*/history.json
+validation/pilot_*/config.json

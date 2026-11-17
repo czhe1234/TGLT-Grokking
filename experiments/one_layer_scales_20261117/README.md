@@ -33,10 +33,18 @@ common.py 复用原模型参数和主辅乘法，完整双侧有限传播核按 
 
 队列运行两组各三个 seed，每张卡先后运行同 seed 的两组。六条曲线均训练到 100,000 步。`runs/<组>_s<seed>/history.csv` 是原始曲线，`checkpoint_*.pt` 保存模型、优化器、随机状态、配置和已有历史。`summary.json` 同时给出 90% 达标、首次 10% 到 90% 宽度与原严格 Grokking 判据。执行或监控失败返回非零退出码，并在状态文件保留原因。
 
-SwanLab 看板仅包含本实验，准确率显示百分比，其余指标保留原单位。
+SwanLab 看板仅包含本实验，准确率显示百分比，其余指标保留原单位。写回强度是 `test_new` 前 1,024 条固定样本的向量分量均方根，门控权重来自该层四个 mode 的 softmax。
+
+本地 SwanLab 的初始化、写指标及结束回调使用同一跨进程文件锁，避免多个实验同时写入 SQLite。启动看板前，先确认日志目录中已生成 `runs.swanlab`，否则旧版看板会保留空目录状态，需要重启看板服务。
 
 ```sh
 /home/chenzhe/work/tglt_experiments/.venv-swanlab/bin/swanlab watch experiments/one_layer_scales_20261117/swanlab/logs -h 127.0.0.1 -p 16100
 ```
 
 Mac 通过 `ssh -N -L 16100:127.0.0.1:16100 transformer` 建立转发后，打开 `http://127.0.0.1:16100/charts`。SwanLab 失败不改变原始日志和模型文件。
+
+训练完成后，运行 `risk-exp4` 环境下的 `analyze.py`。该脚本核对六条曲线、每500步的完整检查点、终点AdamW步数，使用CPU重算全部四组准确率，并输出 `results/run_summary.csv`、完整曲线及两张PNG。验证失败返回非零退出码。
+
+`analyze.py --plot-only` 仅从已发布的完整曲线CSV重画两张图，不读取检查点。`analyze.py --verify-dashboard` 逐项比对本地SwanLab全部16指标与原始history，预期六条运行共19,296个值；缺项、重复步数、数值不一致或未结束均返回非零退出码。
+
+本次首轮监控遇到SQLite写入冲突，已保留 `swanlab/failed_lock_logs` 并从原始曲线重建看板。训练未重启。`training_complete.json` 保留了旧记录器被终止的返回码，最终监控完整性以 `results/dashboard_verification.json` 为准。

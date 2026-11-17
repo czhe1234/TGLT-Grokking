@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "run_count": 6,
+  "value_count": 19296,
+  "runs": {
+    "all_long_s1": {
+      "metrics": 16,
+      "values": 3216,
+      "max_error": 0,
+      "finished": true,
+      "dashboard_run_id": "run-20261117_133734-zfuekwbc"
+    },
+    "all_long_s2": {
+      "metrics": 16,
+      "values": 3216,
+      "max_error": 0,
+      "finished": true,
+      "dashboard_run_id": "run-20261117_133742-qw5ew4nd"
+    },
+    "multiscale_s2": {
+      "metrics": 16,
+      "values": 3216,
+      "max_error": 0,
+      "finished": true,
+      "dashboard_run_id": "run-20261117_133755-n0avtbnw"
+    },
+    "multiscale_s0": {
+      "metrics": 16,
+      "values": 3216,
+      "max_error": 0,
+      "finished": true,
+      "dashboard_run_id": "run-20261117_133756-3xtpf6yl"
+    },
+    "multiscale_s1": {
+      "metrics": 16,
+      "values": 3216,
+      "max_error": 0,
+      "finished": true,
+      "dashboard_run_id": "run-20261117_133756-2twnjd3r"
+    },
+    "all_long_s0": {
+      "metrics": 16,
+      "values": 3216,
+      "max_error": 0,
+      "finished": true,
+      "dashboard_run_id": "run-20261117_133800-provog05"
+    }
+  },
+  "url": "http://127.0.0.1:16100/charts"
+}

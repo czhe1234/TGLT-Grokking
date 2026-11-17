@@ -9,7 +9,17 @@ ROOT = Path(__file__).resolve().parent
 
 def main(dest):
     import swanlab
-    from swanlab.deprecated.local import _ColumnInfo
+    from swanlab.deprecated.local import _ColumnInfo, LocalCallbacker
+    logdir = ROOT/'swanlab/logs'
+    logdir.mkdir(parents=True, exist_ok=True)
+    def serialized(method):
+        def call(self, *a, **kw):
+            with (logdir/'.callback.lock').open('a') as f:
+                fcntl.flock(f, fcntl.LOCK_EX)
+                return method(self, *a, **kw)
+        return call
+    for name in ['on_run_initialized', 'on_scalar_flush', 'on_media_flush', 'on_log_flush', 'on_run_finished']:
+        setattr(LocalCallbacker, name, serialized(getattr(LocalCallbacker, name)))
     original = _ColumnInfo.__init__
     def grouped(self, key, kid, chart_type):
         original(self,key,kid,chart_type)
@@ -30,8 +40,6 @@ def main(dest):
     label = '多尺度' if group == 'multiscale' else '同尺度32'
     cfg.update(display_group=label,accuracy_unit='百分比',source_history=str(dest/'history.csv'))
     colors = {'multiscale':['#D55E00','#B2182B','#A6761D'],'all_long':['#0072B2','#164A78','#009E73']}
-    logdir = ROOT/'swanlab/logs'
-    logdir.mkdir(parents=True, exist_ok=True)
     with (logdir/'.init.lock').open('a') as f:
         fcntl.flock(f,fcntl.LOCK_EX)
         swanlab.init(project='TGLT-One-Layer-Scales',experiment_name='一层_'+label+'_s'+str(seed),
