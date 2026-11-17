@@ -1,0 +1,386 @@
+[
+  {
+    "kind": "TGLT",
+    "window": 8,
+    "seed": 0,
+    "run_id": "r2_T4_M4_seed0",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r2_T4_M4_seed0",
+    "steps": [
+      0,
+      3000,
+      10000,
+      20000,
+      30000,
+      40000,
+      50000,
+      60000,
+      70000,
+      80000,
+      90000,
+      100000
+    ],
+    "anchors": {
+      "t_mem": {
+        "logged_step": 3500,
+        "checkpoint_step": 3000
+      }
+    },
+    "strict_grokking": false,
+    "reached90": false,
+    "final_test_acc": 0.05668326311757947
+  },
+  {
+    "kind": "TGLT",
+    "window": 8,
+    "seed": 1,
+    "run_id": "r2_T4_M4_seed1",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r2_T4_M4_seed1",
+    "steps": [
+      0,
+      2000,
+      10000,
+      20000,
+      30000,
+      40000,
+      50000,
+      52000,
+      57000,
+      58000,
+      60000,
+      70000,
+      80000,
+      90000,
+      100000
+    ],
+    "anchors": {
+      "t_mem": {
+        "logged_step": 2500,
+        "checkpoint_step": 2000
+      },
+      "t10": {
+        "logged_step": 52000,
+        "checkpoint_step": 52000
+      },
+      "t50": {
+        "logged_step": 57000,
+        "checkpoint_step": 57000
+      },
+      "t90": {
+        "logged_step": 58000,
+        "checkpoint_step": 58000
+      }
+    },
+    "strict_grokking": true,
+    "reached90": true,
+    "final_test_acc": 0.9984680199157411
+  },
+  {
+    "kind": "TGLT",
+    "window": 8,
+    "seed": 2,
+    "run_id": "r2_T4_M4_seed2",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r2_T4_M4_seed2",
+    "steps": [
+      0,
+      3000,
+      10000,
+      20000,
+      30000,
+      40000,
+      50000,
+      60000,
+      65000,
+      70000,
+      75000,
+      80000,
+      90000,
+      100000
+    ],
+    "anchors": {
+      "t_mem": {
+        "logged_step": 3000,
+        "checkpoint_step": 3000
+      },
+      "t10": {
+        "logged_step": 65500,
+        "checkpoint_step": 65000
+      },
+      "t50": {
+        "logged_step": 75500,
+        "checkpoint_step": 75000
+      }
+    },
+    "strict_grokking": false,
+    "reached90": false,
+    "final_test_acc": 0.6441976254308694
+  },
+  {
+    "kind": "TGLT",
+    "window": 12,
+    "seed": 0,
+    "run_id": "r3_T4_M4_seed0",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r3_T4_M4_seed0",
+    "steps": [
+      0,
+      2000,
+      10000,
+      20000,
+      30000,
+      31000,
+      40000,
+      48000,
+      50000,
+      53000,
+      60000,
+      70000,
+      80000,
+      90000,
+      100000
+    ],
+    "anchors": {
+      "t_mem": {
+        "logged_step": 2000,
+        "checkpoint_step": 2000
+      },
+      "t10": {
+        "logged_step": 31000,
+        "checkpoint_step": 31000
+      },
+      "t50": {
+        "logged_step": 48000,
+        "checkpoint_step": 48000
+      },
+      "t90": {
+        "logged_step": 53500,
+        "checkpoint_step": 53000
+      }
+    },
+    "strict_grokking": false,
+    "reached90": true,
+    "final_test_acc": 0.9996170049789352
+  },
+  {
+    "kind": "TGLT",
+    "window": 12,
+    "seed": 1,
+    "run_id": "r3_T4_M4_seed1",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r3_T4_M4_seed1",
+    "steps": [
+      0,
+      1000,
+      10000,
+      20000,
+      30000,
+      40000,
+      50000,
+      60000,
+      65000,
+      70000,
+      71000,
+      73000,
+      80000,
+      90000,
+      100000
+    ],
+    "anchors": {
+      "t_mem": {
+        "logged_step": 1500,
+        "checkpoint_step": 1000
+      },
+      "t10": {
+        "logged_step": 65000,
+        "checkpoint_step": 65000
+      },
+      "t50": {
+        "logged_step": 71000,
+        "checkpoint_step": 71000
+      },
+      "t90": {
+        "logged_step": 73500,
+        "checkpoint_step": 73000
+      }
+    },
+    "strict_grokking": true,
+    "reached90": true,
+    "final_test_acc": 0.9996170049789352
+  },
+  {
+    "kind": "TGLT",
+    "window": 12,
+    "seed": 2,
+    "run_id": "r3_T4_M4_seed2",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r3_T4_M4_seed2",
+    "steps": [
+      0,
+      2000,
+      10000,
+      20000,
+      30000,
+      38000,
+      40000,
+      47000,
+      50000,
+      60000,
+      61000,
+      70000,
+      80000,
+      90000,
+      100000
+    ],
+    "anchors": {
+      "t_mem": {
+        "logged_step": 2000,
+        "checkpoint_step": 2000
+      },
+      "t10": {
+        "logged_step": 38000,
+        "checkpoint_step": 38000
+      },
+      "t50": {
+        "logged_step": 47500,
+        "checkpoint_step": 47000
+      },
+      "t90": {
+        "logged_step": 61500,
+        "checkpoint_step": 61000
+      }
+    },
+    "strict_grokking": false,
+    "reached90": true,
+    "final_test_acc": 1.0
+  },
+  {
+    "kind": "TGLT",
+    "window": 15,
+    "seed": 0,
+    "run_id": "r3_T5_M4_seed0",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r3_T5_M4_seed0",
+    "steps": [
+      0,
+      2000,
+      10000,
+      19000,
+      20000,
+      30000,
+      40000,
+      43000,
+      50000,
+      55000,
+      60000,
+      70000,
+      80000,
+      90000,
+      100000
+    ],
+    "anchors": {
+      "t_mem": {
+        "logged_step": 2000,
+        "checkpoint_step": 2000
+      },
+      "t10": {
+        "logged_step": 19500,
+        "checkpoint_step": 19000
+      },
+      "t50": {
+        "logged_step": 43500,
+        "checkpoint_step": 43000
+      },
+      "t90": {
+        "logged_step": 55000,
+        "checkpoint_step": 55000
+      }
+    },
+    "strict_grokking": false,
+    "reached90": true,
+    "final_test_acc": 0.9919571045576407
+  },
+  {
+    "kind": "TGLT",
+    "window": 15,
+    "seed": 1,
+    "run_id": "r3_T5_M4_seed1",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r3_T5_M4_seed1",
+    "steps": [
+      0,
+      1000,
+      10000,
+      14000,
+      20000,
+      30000,
+      40000,
+      43000,
+      50000,
+      54000,
+      60000,
+      70000,
+      80000,
+      90000,
+      100000
+    ],
+    "anchors": {
+      "t_mem": {
+        "logged_step": 1500,
+        "checkpoint_step": 1000
+      },
+      "t10": {
+        "logged_step": 14000,
+        "checkpoint_step": 14000
+      },
+      "t50": {
+        "logged_step": 43500,
+        "checkpoint_step": 43000
+      },
+      "t90": {
+        "logged_step": 54500,
+        "checkpoint_step": 54000
+      }
+    },
+    "strict_grokking": false,
+    "reached90": true,
+    "final_test_acc": 0.9892761394101877
+  },
+  {
+    "kind": "TGLT",
+    "window": 15,
+    "seed": 2,
+    "run_id": "r3_T5_M4_seed2",
+    "path": "/home/chenzhe/work/tglt_experiments/week/v1/results/r3_T5_M4_seed2",
+    "steps": [
+      0,
+      2000,
+      10000,
+      15000,
+      20000,
+      30000,
+      40000,
+      46000,
+      50000,
+      60000,
+      70000,
+      80000,
+      90000,
+      100000
+    ],
+    "anchors": {
+      "t_mem": {
+        "logged_step": 2000,
+        "checkpoint_step": 2000
+      },
+      "t10": {
+        "logged_step": 15000,
+        "checkpoint_step": 15000
+      },
+      "t50": {
+        "logged_step": 46500,
+        "checkpoint_step": 46000
+      },
+      "t90": {
+        "logged_step": 70000,
+        "checkpoint_step": 70000
+      }
+    },
+    "strict_grokking": false,
+    "reached90": true,
+    "final_test_acc": 0.9973190348525469
+  }
+]

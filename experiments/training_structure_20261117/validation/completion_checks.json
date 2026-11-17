@@ -1,0 +1,80 @@
+{
+  "runs": 9,
+  "points": 130,
+  "coalitions": 1040,
+  "max_parameter_error": 3.552713678800501e-15,
+  "max_balance_error": 1.5635484511386695e-14,
+  "replay_correct_difference_points": 0,
+  "max_replay_correct_difference": 0,
+  "CPU_only": true,
+  "new_training_runs": 0,
+  "analysis_sha256_at_execution": "135fa8bd6f6562b4e4d0a4adbaf8010191f97285852f2d3f4a2130fd97692ab3",
+  "analysis_sha256_after_cleanup": "274c39a10968525987b08411e583ddc7fe67653b637b4e4f5ae0a2e674d0946e",
+  "cleanup": "Removed unused import and assignment; renamed an unused unpacked value. No numerical behavior changed.",
+  "plot_history_sources": [
+    {
+      "run_id": "r2_T4_M4_seed0",
+      "packaged_path": "experiments/transformer_window_bridge_20261115/histories/r2_T4_M4_seed0.json",
+      "sha256": "f88d67d814fb3961923b17534ba6814d58746ae78f26220943a7a9fe3c9efc1b"
+    },
+    {
+      "run_id": "r2_T4_M4_seed1",
+      "packaged_path": "experiments/transformer_window_bridge_20261115/histories/r2_T4_M4_seed1.json",
+      "sha256": "adf27fc448ab4374b26bcc583750c331fd9894f08acb162ecd62de5e263a5f16"
+    },
+    {
+      "run_id": "r2_T4_M4_seed2",
+      "packaged_path": "experiments/transformer_window_bridge_20261115/histories/r2_T4_M4_seed2.json",
+      "sha256": "b2e56b22ce3629b6d8d0fca6d380bdb91ca3f68dfea9c9e8070dbae371653a21"
+    },
+    {
+      "run_id": "r3_T4_M4_seed0",
+      "packaged_path": "experiments/transformer_window_bridge_20261115/histories/r3_T4_M4_seed0.json",
+      "sha256": "9b1bd9211cf018729fe5d1aa374f8d59193bf676cbdfaaba8ec7446a99a4cd33"
+    },
+    {
+      "run_id": "r3_T4_M4_seed1",
+      "packaged_path": "experiments/transformer_window_bridge_20261115/histories/r3_T4_M4_seed1.json",
+      "sha256": "9ca670508068486e5f405d2e1313dfeea5edde818bbb0e247ac70e923794e095"
+    },
+    {
+      "run_id": "r3_T4_M4_seed2",
+      "packaged_path": "experiments/transformer_window_bridge_20261115/histories/r3_T4_M4_seed2.json",
+      "sha256": "46738c2c7b9d3f0807b25a19523bfadf4fb297e4d36c043433637a725b69e4e3"
+    },
+    {
+      "run_id": "r3_T5_M4_seed0",
+      "packaged_path": "experiments/transformer_window_bridge_20261115/histories/r3_T5_M4_seed0.json",
+      "sha256": "2bfcd52b3ed0bbcb1cd8906f1a4fc5070f63ccdd872aebb78a7c0902bfe9bab6"
+    },
+    {
+      "run_id": "r3_T5_M4_seed1",
+      "packaged_path": "experiments/transformer_window_bridge_20261115/histories/r3_T5_M4_seed1.json",
+      "sha256": "192cae0b09bafa399c85a06f65aa2cfc88520ae2c681eb54d42939fc9e0bc69b"
+    },
+    {
+      "run_id": "r3_T5_M4_seed2",
+      "packaged_path": "experiments/transformer_window_bridge_20261115/histories/r3_T5_M4_seed2.json",
+      "sha256": "a5ce5d3e9705269f5cf767362f86c4a5ccbc7ece0a4e05bb025710a825b640ac"
+    }
+  ],
+  "compiled_scripts": [
+    "analyze.py",
+    "summarize.py",
+    "monitor.py"
+  ],
+  "coalition_attribution_recomputed_points": 130,
+  "coalition_attribution_max_error": 0.0,
+  "plot_regenerated_byte_identical": true,
+  "plot_sha256": "f055023982084e44108826bb7f4e3e0d0df01d788ff7be6c68bd99ff0f23cc82",
+  "post_memory_filter": "original logged t_mem; not the nearest saved anchor",
+  "post_memory_points": 117,
+  "positive_decay_points": 3,
+  "negative_decay_points": 114,
+  "figure_review": "Nine panels rendered and visually inspected: labels, colors, axes, legend and source note legible.",
+  "script_sha256": {
+    "analyze.py": "274c39a10968525987b08411e583ddc7fe67653b637b4e4f5ae0a2e674d0946e",
+    "summarize.py": "efa27b98abdbd7f12e856dc255f8decbce9e86468ec49d292987d8f5e1570a85",
+    "monitor.py": "0ce196c4dd774d9417654b34d9130ebafaf0ea5f4db0fd1e1167ee01e2c4b6a9"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "state": "complete",
+  "completed": [
+    "r2_T4_M4_seed0",
+    "r2_T4_M4_seed1",
+    "r2_T4_M4_seed2",
+    "r3_T4_M4_seed0",
+    "r3_T4_M4_seed1",
+    "r3_T4_M4_seed2",
+    "r3_T5_M4_seed0",
+    "r3_T5_M4_seed1",
+    "r3_T5_M4_seed2"
+  ],
+  "metrics": {
+    "表现/测试准确率（%）": [
+      "test_acc",
+      100
+    ],
+    "表现/训练准确率（%）": [
+      "train_acc",
+      100
+    ],
+    "表现/测试Margin": [
+      "test_margin",
+      1
+    ],
+    "表征结构/规则份额（%）": [
+      "rule_fraction",
+      100
+    ],
+    "表征结构/共享分量平方强度B": [
+      "rule_energy",
+      1
+    ],
+    "表征结构/类内差异平方强度W": [
+      "within_energy",
+      1
+    ],
+    "表征结构/总写回规则份额（%）": [
+      "write_rule_fraction",
+      100
+    ],
+    "单步归因/实际规则份额变化": [
+      "delta_rule_fraction",
+      1
+    ],
+    "单步归因/当前梯度": [
+      "gradient_delta_rule_fraction",
+      1
+    ],
+    "单步归因/历史动量": [
+      "momentum_delta_rule_fraction",
+      1
+    ],
+    "单步归因/权重衰减": [
+      "decay_delta_rule_fraction",
+      1
+    ],
+    "变化来源/共享分量变化": [
+      "fraction_from_rule_change",
+      1
+    ],
+    "变化来源/类内差异变化": [
+      "fraction_from_within_change",
+      1
+    ]
+  },
+  "source": "results/curves.csv",
+  "cloud_upload": false,
+  "version": "0.10.5",
+  "runs": 9,
+  "points": 130,
+  "scalars": 1690
+}

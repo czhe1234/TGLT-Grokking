@@ -1,0 +1,13 @@
+{
+  "state": "complete",
+  "seconds": 122.13571524620056,
+  "runs": 9,
+  "points": 130,
+  "coalitions": 1040,
+  "max_parameter_error": 3.552713678800501e-15,
+  "max_balance_error": 1.5635484511386695e-14,
+  "replay_correct_difference_points": 0,
+  "max_replay_correct_difference": 0,
+  "CPU_only": true,
+  "new_training_runs": 0
+}

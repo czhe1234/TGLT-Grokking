@@ -1,0 +1,7 @@
+{
+  "cases": 4,
+  "seconds": 14.389722108840942,
+  "parameter_error": 1.7763568394002505e-15,
+  "native_forward_error": 1.1368683772161603e-13,
+  "native_gradient_error": 1.4551915228366852e-10
+}
