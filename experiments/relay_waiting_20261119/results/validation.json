@@ -1,0 +1,62 @@
+{
+  "completed_arms": 12,
+  "observations": 492,
+  "original_snapshots": 1202,
+  "native_historical_points": 27,
+  "native_historical_disagreements": [],
+  "native_restored_parameter_checks": [
+    {
+      "fork": "fast_same_time",
+      "relative_step": 1000,
+      "max_abs_weight_difference": 0.0
+    },
+    {
+      "fork": "fast_same_time",
+      "relative_step": 4000,
+      "max_abs_weight_difference": 0.0
+    },
+    {
+      "fork": "slow_same_time",
+      "relative_step": 1000,
+      "max_abs_weight_difference": 0.0
+    },
+    {
+      "fork": "slow_same_time",
+      "relative_step": 4000,
+      "max_abs_weight_difference": 0.0
+    },
+    {
+      "fork": "slow_matched_stage",
+      "relative_step": 1000,
+      "max_abs_weight_difference": 0.0
+    },
+    {
+      "fork": "slow_matched_stage",
+      "relative_step": 4000,
+      "max_abs_weight_difference": 0.0
+    }
+  ],
+  "source_sha256": {
+    "fast_same_time": "0129a356288d05f353e8bbb8266d1f98d9132677a345863e613562078da1b969",
+    "slow_same_time": "7ad738d37a4be49448bcf0a0ee1413d581312a64d9b4c5cf1982beb4a3df70cf",
+    "slow_matched_stage": "f3933e43f95098fa30bd68ac383b63ee10c5055957bce38a9ecb879bac910ad2"
+  },
+  "rounding_error_max": {
+    "implementation_norm_error": 6.507552468681136e-05,
+    "implementation_radial_error": 6.960506625806062e-05,
+    "implementation_mean_error": 0.00013877733141385383
+  },
+  "original_adam_error_replays_checked": 12,
+  "original_adam_error_replay_arms": 60,
+  "post_release_steps": 3000,
+  "minimum_train_correct": 866,
+  "response_finite_checks": 24,
+  "response_max_error": 5.341411779546945e-08,
+  "swanlab": {
+    "runs": 12,
+    "observations": 492,
+    "verified_scalars": 5904,
+    "local_port": 16104,
+    "cloud_upload": false
+  }
+}
