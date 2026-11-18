@@ -1,0 +1,44 @@
+{
+  "question": "Does cyclic organization of the existing number embedding contribute causally to how quickly held-out predictions use the second-layer query interaction in the two original H12 runs?",
+  "task": "original mod-59 addition, positions 0/7/15, H12, beta 0.25, weight_decay 0.03, original split and all optimizer hyperparameters",
+  "forks": [
+    {
+      "name": "fast_same_time",
+      "run": "b0.25_wd0.03_s0",
+      "step": 105500,
+      "gpu": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160"
+    },
+    {
+      "name": "slow_same_time",
+      "run": "b0.25_wd0.03_s2",
+      "step": 105500,
+      "gpu": "GPU-9a72820b-a8c2-0a94-2297-4f65afc67eb0"
+    },
+    {
+      "name": "slow_matched_stage",
+      "run": "b0.25_wd0.03_s2",
+      "step": 256000,
+      "gpu": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009"
+    }
+  ],
+  "choice": "Both seeds at a shared historical clock. For the fast fork and the later slow fork use 2000 steps before their historical first 3 consecutive 500-step evaluations at or above 10% held-out accuracy. Retrospective window selection, no prospective claim.",
+  "arms": [
+    "native",
+    "shuffled",
+    "increase",
+    "decrease"
+  ],
+  "pulse_steps": 1000,
+  "follow_steps": 3000,
+  "eval_every": 100,
+  "event_every": 500,
+  "angle_degrees": 15,
+  "shuffle_seed": 20261119,
+  "order": "Fraction of the variation of the off-diagonal Gram of centered residue vectors explained by differences modulo 59. All 59 residue identities appear in training. No evaluation examples or future weights in the intervention.",
+  "pulse": "Rotate only the centered, nonradial part of the native AdamW displacement of the 59 residue embeddings. Preserve row-mean displacement, centered radial component, total displacement norm and current step's post-update centered embedding norm. True positive/negative direction is the gradient of cyclic order orthogonal to the native tangent. Random cycle control is also orthogonalized against the true direction. Sole parameter field changed in a pulse is residue.weight[1:]. Other parameters and moment buffers take their usual AdamW step. After pulse all updates are native.",
+  "primary": "First of 3 successive 500-step observations with native test >=10%, and native minus query-modulation-removed test accuracy >=5 percentage points. Record event onset and confirmation, distinguish censored. Compare all arms within each fork. Even if the pulse crosses 10% early, report mean accuracy and query dependence after release.",
+  "secondaries": "Always report native accuracy, centered representation order, same-sum variance of query modulation, native vs query-modulation-deleted CE/margin/accuracy, training accuracy and its minimum, matched-control norm errors. Record native (no ablation) 10% crossing at 500 steps as control, and all post-release points.",
+  "history_grid": "original H12 trajectories every 2500 steps incl 0 and 300000 plus the three fork steps and 4000, 91500, 107000,155000,258000. Also all 601 original residual and accuracy logs per run.",
+  "devices": "Risk-exp4/PyTorch CPU for read-only historical structure; /opt/anaconda3/bin/python, torch 2.5.1+cu121 with TF32 matmul disabled for branch updates, swanlab 0.10.5 isolated local logging",
+  "interpretation": "Same-coordinate perturbations are causal interventions on the training procedure of these saved states. A task-informed pulse can change acquisition speed without establishing that geometry alone explains an entire between-seed delay. One pair of seeds, three forks, bounded observation."
+}
