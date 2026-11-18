@@ -1,0 +1,173 @@
+[
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 0,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 0.8725541234016418,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 18,
+        "ce": 4.238816114403735,
+        "margin": -1.8269059658050537
+      },
+      "test": {
+        "correct": 41,
+        "ce": 4.258856011824971,
+        "margin": -1.8501754999160767
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 18,
+        "ce": 4.238339899874282,
+        "margin": -1.8250563144683838
+      },
+      "test": {
+        "correct": 41,
+        "ce": 4.258447209522214,
+        "margin": -1.8483890295028687
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "e40eb781588f8317894f1c86d40902b484cf310535e1766ee84af961a48d95d1",
+    "first_historical_step_verified": true
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 4000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 23.07952308654785,
+    "clip_factor": 0.04332844976568909,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 0.11805745267319953,
+        "margin": 3.2856900691986084
+      },
+      "test": {
+        "correct": 1,
+        "ce": 28.96717014553811,
+        "margin": -28.691354751586914
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 869,
+        "ce": 0.10794234001773527,
+        "margin": 3.361621141433716
+      },
+      "test": {
+        "correct": 1,
+        "ce": 29.0190958923784,
+        "margin": -28.735572814941406
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "5b2ac0345d0eca12fd358a56596fb6d3431922108e4585d78e397cca73fc756f"
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 107000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 30.98560333251953,
+    "clip_factor": 0.03227305135857865,
+    "before": {
+      "train": {
+        "correct": 866,
+        "ce": 0.02388104405896417,
+        "margin": 142.57159423828125
+      },
+      "test": {
+        "correct": 232,
+        "ce": 131.8925100536193,
+        "margin": -128.2633056640625
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 1.0493779876108827e-05,
+        "margin": 147.67100524902344
+      },
+      "test": {
+        "correct": 239,
+        "ce": 130.48342349674454,
+        "margin": -126.79074096679688
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "c0b4ec39300cb9d4caf07434cf2e6f1a040c480e17bed8e4ff008a877ab7f32c"
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 155000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 1.420793432771461e-05,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 7.042938799211948e-08,
+        "margin": 17.36136817932129
+      },
+      "test": {
+        "correct": 2545,
+        "ce": 0.08529677696038096,
+        "margin": 8.052424430847168
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 8.824227033878794e-08,
+        "margin": 17.242542266845703
+      },
+      "test": {
+        "correct": 2540,
+        "ce": 0.08979245685882743,
+        "margin": 7.989889621734619
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "3d343883ddfef386d679fa2b9a43b91afebac9e6d4d63f96ddfdde5870e3ce4e"
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 300000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 4.758080649480689e-06,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 1.3702214576254448e-09,
+        "margin": 76.47119140625
+      },
+      "test": {
+        "correct": 2591,
+        "ce": 0.09811683049926992,
+        "margin": 71.16433715820312
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 1.3702214576254448e-09,
+        "margin": 76.46266174316406
+      },
+      "test": {
+        "correct": 2591,
+        "ce": 0.09813491195976758,
+        "margin": 71.15571594238281
+      }
+    },
+    "horizon_plus_one": true,
+    "sha256": "9c2d16540a924cdd3684dcc102cc644d5a61e620dc6340b7944379b5b408b8d5"
+  }
+]

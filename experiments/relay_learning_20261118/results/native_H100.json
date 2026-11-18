@@ -1,0 +1,515 @@
+[
+  {
+    "run_id": "b0.25_wd0.03_s2",
+    "step": 0,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 0.6512688398361206,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 19,
+        "ce": 4.221924950610632,
+        "margin": -1.1319255828857422
+      },
+      "test": {
+        "correct": 40,
+        "ce": 4.23323125119686,
+        "margin": -1.143086552619934
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 19,
+        "ce": 4.221529835668103,
+        "margin": -1.1307514905929565
+      },
+      "test": {
+        "correct": 40,
+        "ce": 4.232902114850632,
+        "margin": -1.141979694366455
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "748e795d36e4e4f19afc8698cae5509f4d6f15c1636eb515097f1fde0913f42a",
+    "first_historical_step_verified": true
+  },
+  {
+    "run_id": "b0.25_wd0.03_s2",
+    "step": 4000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 9.122870445251465,
+    "clip_factor": 0.10961461048763423,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 0.022156700046583155,
+        "margin": 5.2314934730529785
+      },
+      "test": {
+        "correct": 3,
+        "ce": 34.16943639888932,
+        "margin": -33.95708084106445
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 866,
+        "ce": 0.04762354883654364,
+        "margin": 4.864474296569824
+      },
+      "test": {
+        "correct": 2,
+        "ce": 34.136917727882036,
+        "margin": -33.92009353637695
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "10f05ef625514b39e9058eb88f1289328a05999d1e110d8599ab749dfb570c9d"
+  },
+  {
+    "run_id": "b0.25_wd0.03_s2",
+    "step": 107000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 2.282192508573644e-05,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 4.727264094145048e-08,
+        "margin": 25.778736114501953
+      },
+      "test": {
+        "correct": 16,
+        "ce": 51.550040693220986,
+        "margin": -51.43009948730469
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 4.686157442575813e-08,
+        "margin": 25.775691986083984
+      },
+      "test": {
+        "correct": 16,
+        "ce": 51.53716248563769,
+        "margin": -51.4172248840332
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "0fe3175e1ca8f7d193bd0d59e11003424af7ce246dc2cd0cfcc910673874000a"
+  },
+  {
+    "run_id": "b0.25_wd0.03_s2",
+    "step": 155000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 1.6240423065028153e-05,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 9.111973594863439e-08,
+        "margin": 17.120697021484375
+      },
+      "test": {
+        "correct": 24,
+        "ce": 21.571760699923402,
+        "margin": -21.32774543762207
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 8.31724499785823e-08,
+        "margin": 17.147140502929688
+      },
+      "test": {
+        "correct": 23,
+        "ce": 21.607780184795097,
+        "margin": -21.36431312561035
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "109a707def67a0c76d0d318caaeb5ef9a8384eb691f8077e797839e6e467d7f2"
+  },
+  {
+    "run_id": "b0.25_wd0.03_s2",
+    "step": 300000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 2.2952550352783874e-05,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 8.221329007101721e-10,
+        "margin": 134.79676818847656
+      },
+      "test": {
+        "correct": 1702,
+        "ce": 18.915356604270393,
+        "margin": 25.003211975097656
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 8.221329007101721e-10,
+        "margin": 134.7801055908203
+      },
+      "test": {
+        "correct": 1703,
+        "ce": 18.916656692837993,
+        "margin": 24.994768142700195
+      }
+    },
+    "horizon_plus_one": true,
+    "sha256": "5eff34b75c7936f46e6f6dbe657a04df02006c330cc4a2e2dcd5627df0cfe001"
+  },
+  {
+    "run_id": "r2_T4_M4_seed1",
+    "step": 0,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 0.7627437114715576,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 17,
+        "ce": 4.22735525547773,
+        "margin": -1.2987205982208252
+      },
+      "test": {
+        "correct": 43,
+        "ce": 4.253875954495404,
+        "margin": -1.324280023574829
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 17,
+        "ce": 4.226722173581178,
+        "margin": -1.296958088874817
+      },
+      "test": {
+        "correct": 43,
+        "ce": 4.253296225703753,
+        "margin": -1.3225749731063843
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "0bece82c155595e33108946a24dd5bfce2d01394edb289e2248abd46a8c90c03",
+    "first_historical_step_verified": true
+  },
+  {
+    "run_id": "r2_T4_M4_seed1",
+    "step": 3000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 4.650696277618408,
+    "clip_factor": 0.21502152049597462,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 0.007954915364583334,
+        "margin": 6.326080799102783
+      },
+      "test": {
+        "correct": 8,
+        "ce": 28.137953011298354,
+        "margin": -27.89500617980957
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 860,
+        "ce": 0.05446727796532642,
+        "margin": 5.439167022705078
+      },
+      "test": {
+        "correct": 9,
+        "ce": 28.07054887973956,
+        "margin": -27.822715759277344
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "0ccce825379078f4f81460a117ac883b6e77a7ad5f107691604fc61d70d1c689"
+  },
+  {
+    "run_id": "r2_T4_M4_seed1",
+    "step": 51000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 0.00022992683807387948,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 3.1901368250449497e-06,
+        "margin": 14.297846794128418
+      },
+      "test": {
+        "correct": 257,
+        "ce": 16.155893934316353,
+        "margin": -15.541553497314453
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 3.176023808960942e-06,
+        "margin": 14.299360275268555
+      },
+      "test": {
+        "correct": 257,
+        "ce": 16.157363079279968,
+        "margin": -15.543218612670898
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "380d86f592918b9e96bd2860b3dee30fea32d0911b6abee6f68e843fc55a3dac"
+  },
+  {
+    "run_id": "r2_T4_M4_seed1",
+    "step": 58000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 7.888384425314143e-05,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 6.076926633116158e-07,
+        "margin": 16.04292106628418
+      },
+      "test": {
+        "correct": 2516,
+        "ce": 0.13266639899403965,
+        "margin": 9.687527656555176
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 6.05226331122819e-07,
+        "margin": 16.04611587524414
+      },
+      "test": {
+        "correct": 2516,
+        "ce": 0.1324078937181336,
+        "margin": 9.688948631286621
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "0a5c723dfab987bbc05a7d101ac8017c96b894d3cd37ed868ce2b21911e8b360"
+  },
+  {
+    "run_id": "r2_T4_M4_seed1",
+    "step": 100000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 0.12831246852874756,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 0.00016282128876653212,
+        "margin": 13.81779956817627
+      },
+      "test": {
+        "correct": 2607,
+        "ce": 0.004276490037991872,
+        "margin": 13.297711372375488
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 867,
+        "ce": 0.007794723291506713,
+        "margin": 12.082762718200684
+      },
+      "test": {
+        "correct": 2592,
+        "ce": 0.023965341019383888,
+        "margin": 11.5640287399292
+      }
+    },
+    "horizon_plus_one": true,
+    "sha256": "ca71d622aee48222c62d58c23f389ea7219af68005e251eab899cca2a0eef689"
+  },
+  {
+    "run_id": "r2_T4_M4_seed0",
+    "step": 0,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 1.0541324615478516,
+    "clip_factor": 0.9486464821367458,
+    "before": {
+      "train": {
+        "correct": 18,
+        "ce": 4.225084467043822,
+        "margin": -1.8826320171356201
+      },
+      "test": {
+        "correct": 41,
+        "ce": 4.24400261214573,
+        "margin": -1.9060921669006348
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 18,
+        "ce": 4.224252143947558,
+        "margin": -1.8783873319625854
+      },
+      "test": {
+        "correct": 41,
+        "ce": 4.24327926022118,
+        "margin": -1.9019383192062378
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "be2bba2f80789b85bae8f4ad5ba1ea4fd3537235b56863d375cf3ae4f653a259",
+    "first_historical_step_verified": true
+  },
+  {
+    "run_id": "r2_T4_M4_seed0",
+    "step": 3000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 89.54438781738281,
+    "clip_factor": 0.011167645602444215,
+    "before": {
+      "train": {
+        "correct": 833,
+        "ce": 0.1870385180944684,
+        "margin": 3.219785690307617
+      },
+      "test": {
+        "correct": 5,
+        "ce": 24.070767306587513,
+        "margin": -23.757280349731445
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 848,
+        "ce": 0.145831439138829,
+        "margin": 3.3905234336853027
+      },
+      "test": {
+        "correct": 8,
+        "ce": 23.870956111164304,
+        "margin": -23.548694610595703
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "41f4715dc0843dd81ddf94d67115c244812e4bdf4481b02bffb0b7adb674b190"
+  },
+  {
+    "run_id": "r2_T4_M4_seed0",
+    "step": 51000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 50.755001068115234,
+    "clip_factor": 0.019702491562466302,
+    "before": {
+      "train": {
+        "correct": 840,
+        "ce": 0.10496474518173042,
+        "margin": 7.9115400314331055
+      },
+      "test": {
+        "correct": 25,
+        "ce": 31.27275828226733,
+        "margin": -31.041706085205078
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 850,
+        "ce": 0.05580976201199937,
+        "margin": 8.499143600463867
+      },
+      "test": {
+        "correct": 17,
+        "ce": 31.03276701934125,
+        "margin": -30.80587387084961
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "233d4e605e006e8b899f5a72b0a41d1836e8bfc5efc845a7153e584dfa87b8a7"
+  },
+  {
+    "run_id": "r2_T4_M4_seed0",
+    "step": 58000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 1.7056363821029663,
+    "clip_factor": 0.5862910900598635,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 0.0013443642649157293,
+        "margin": 12.55101490020752
+      },
+      "test": {
+        "correct": 23,
+        "ce": 39.073313625047874,
+        "margin": -38.88267135620117
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 0.0028364033534609037,
+        "margin": 12.657989501953125
+      },
+      "test": {
+        "correct": 27,
+        "ce": 39.14081948965914,
+        "margin": -38.94789123535156
+      }
+    },
+    "horizon_plus_one": false,
+    "sha256": "5a975c0bab48988e06c1cdc43093606ae5d0234b270b19382cc9ed41896b7a0a"
+  },
+  {
+    "run_id": "r2_T4_M4_seed0",
+    "step": 100000,
+    "device": "GPU-6b53c3c2-3071-5dfb-f306-2f2f142f8009",
+    "torch_version": "2.5.1+cu121",
+    "gradnorm": 6.123721686890349e-05,
+    "clip_factor": 1.0,
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 1.306093602987199e-06,
+        "margin": 14.926721572875977
+      },
+      "test": {
+        "correct": 148,
+        "ce": 22.64373833062045,
+        "margin": -22.23059844970703
+      }
+    },
+    "after": {
+      "train": {
+        "correct": 870,
+        "ce": 1.2985573835328392e-06,
+        "margin": 14.929973602294922
+      },
+      "test": {
+        "correct": 148,
+        "ce": 22.647224183741862,
+        "margin": -22.234167098999023
+      }
+    },
+    "horizon_plus_one": true,
+    "sha256": "fe1cd314ec5a218a03a6b6bdb1ffa5f4e6c6b2e7911be7354975df78fd3a92ec"
+  }
+]

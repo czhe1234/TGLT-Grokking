@@ -1,0 +1,344 @@
+[
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 101000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 8.111711740012056e-08,
+        "margin": 17.239866256713867
+      },
+      "test": {
+        "correct": 164,
+        "ce": 12.26478570231712,
+        "margin": -11.816856384277344
+      }
+    },
+    "original_test_correct": 164,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 106000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 7.591027486801747e-08,
+        "margin": 17.300350189208984
+      },
+      "test": {
+        "correct": 196,
+        "ce": 11.486232376244734,
+        "margin": -10.995950698852539
+      }
+    },
+    "original_test_correct": 196,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 109000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 8.879035902637774e-08,
+        "margin": 17.065513610839844
+      },
+      "test": {
+        "correct": 294,
+        "ce": 10.042574534421677,
+        "margin": -9.437496185302734
+      }
+    },
+    "original_test_correct": 294,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 112500,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 9.166782463622419e-08,
+        "margin": 17.17645263671875
+      },
+      "test": {
+        "correct": 260,
+        "ce": 10.39390813505362,
+        "margin": -9.813597679138184
+      }
+    },
+    "original_test_correct": 260,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 117500,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 9.057164726104458e-08,
+        "margin": 17.14972686767578
+      },
+      "test": {
+        "correct": 324,
+        "ce": 9.209907452843739,
+        "margin": -8.534193992614746
+      }
+    },
+    "original_test_correct": 324,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 119500,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 9.714871151212217e-08,
+        "margin": 17.158937454223633
+      },
+      "test": {
+        "correct": 353,
+        "ce": 9.155919367579472,
+        "margin": -8.458550453186035
+      }
+    },
+    "original_test_correct": 353,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 124500,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 9.618955630884003e-08,
+        "margin": 17.15223503112793
+      },
+      "test": {
+        "correct": 439,
+        "ce": 8.108813972137112,
+        "margin": -7.277087211608887
+      }
+    },
+    "original_test_correct": 439,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 131000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 1.1825012598432942e-07,
+        "margin": 17.01505470275879
+      },
+      "test": {
+        "correct": 583,
+        "ce": 6.799867148602068,
+        "margin": -5.746331214904785
+      }
+    },
+    "original_test_correct": 583,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 132000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 9.824488888730177e-08,
+        "margin": 17.19691276550293
+      },
+      "test": {
+        "correct": 591,
+        "ce": 6.82403099267522,
+        "margin": -5.729214191436768
+      }
+    },
+    "original_test_correct": 591,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 134500,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 7.193663188299143e-08,
+        "margin": 17.521005630493164
+      },
+      "test": {
+        "correct": 889,
+        "ce": 5.07159987193604,
+        "margin": -3.26470947265625
+      }
+    },
+    "original_test_correct": 889,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 137000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 6.960725914231962e-08,
+        "margin": 17.308652877807617
+      },
+      "test": {
+        "correct": 760,
+        "ce": 5.391711149942551,
+        "margin": -3.9711272716522217
+      }
+    },
+    "original_test_correct": 760,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 140500,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 7.659538572750471e-08,
+        "margin": 17.23149299621582
+      },
+      "test": {
+        "correct": 1074,
+        "ce": 3.8137761513787822,
+        "margin": -1.838940143585205
+      }
+    },
+    "original_test_correct": 1074,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 147500,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 1.1301206574700344e-05,
+        "margin": 188.5089569091797
+      },
+      "test": {
+        "correct": 1653,
+        "ce": 23.64736780687476,
+        "margin": 28.004602432250977
+      }
+    },
+    "original_test_correct": 1653,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 150000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 9.605253413694258e-08,
+        "margin": 17.055253982543945
+      },
+      "test": {
+        "correct": 1918,
+        "ce": 1.151128096125766,
+        "margin": 3.117950677871704
+      }
+    },
+    "original_test_correct": 1918,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 151500,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 4.8231800326317465e-08,
+        "margin": 17.460834503173828
+      },
+      "test": {
+        "correct": 2059,
+        "ce": 0.9013281960635293,
+        "margin": 3.96867299079895
+      }
+    },
+    "original_test_correct": 2059,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 152000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 6.289317271934458e-08,
+        "margin": 17.389057159423828
+      },
+      "test": {
+        "correct": 2101,
+        "ce": 0.8161315333564726,
+        "margin": 4.176405429840088
+      }
+    },
+    "original_test_correct": 2101,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 156000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 6.604468267298593e-08,
+        "margin": 17.50241470336914
+      },
+      "test": {
+        "correct": 2516,
+        "ce": 0.12202908864015823,
+        "margin": 7.856799125671387
+      }
+    },
+    "original_test_correct": 2516,
+    "test_ce_abs_error": 0.0
+  },
+  {
+    "run_id": "b0.25_wd0.03_s0",
+    "step": 160000,
+    "device": "GPU-70b6fceb-c7c4-9467-3c81-097c9284c160",
+    "before": {
+      "train": {
+        "correct": 870,
+        "ce": 2.8774650871483393e-09,
+        "margin": 91.40403747558594
+      },
+      "test": {
+        "correct": 2244,
+        "ce": 3.3588884018335885,
+        "margin": 49.21633529663086
+      }
+    },
+    "original_test_correct": 2244,
+    "test_ce_abs_error": 0.0
+  }
+]

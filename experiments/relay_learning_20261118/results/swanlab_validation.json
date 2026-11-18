@@ -1,0 +1,9 @@
+{
+  "runs": 8,
+  "checkpoints": 1404,
+  "native_updates": 16,
+  "scalars": 14274,
+  "port": 16103,
+  "mode": "local",
+  "verified": true
+}

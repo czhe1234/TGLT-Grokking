@@ -1,0 +1,23 @@
+{
+  "runs": 4,
+  "saved_states": 1404,
+  "anchor_updates": 16,
+  "historical_step1_checks": 4,
+  "named_checkpoints_match_history": true,
+  "train_test_n": [
+    870,
+    2611
+  ],
+  "cpu_counts_matched": 1377,
+  "cpu_mismatches_checked_on_original_gpu": 27,
+  "cpu_max_test_count_difference": 2,
+  "original_gpu_count_mismatches": 0,
+  "max_delta_transport_identity": 1.887379141862766e-15,
+  "position_patch_decomposition_max_abs_error": 4.085620730620576e-14,
+  "altered_forward_reference_max_abs_error": 2.1827872842550278e-11,
+  "max_fp64_adamw_formula_error": 7.048450098217165e-15,
+  "original_precision_group_decomposition": "exact at all 16 checkpoints",
+  "checkpoint_sha256_verified": 1404,
+  "hybrids_within_seed": 64,
+  "independent_run_pairs": 2
+}
