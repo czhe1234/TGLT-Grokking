@@ -1,4 +1,4 @@
-"""Read the two historical cohorts at their common saved steps and at initialization, if saved."""
+"""Reproduce the nine reported H15 readout and addition accuracies from the original checkpoints."""
 import argparse
 import csv
 import hashlib
@@ -11,13 +11,6 @@ import torch
 
 def read_json(path):
     return json.loads(path.read_text())
-
-def original_runs(root):
-    july = root / "exp2_no_mlp/current/results/01_classic_grokking/20260712_classic_p59_s16_M4_T4_3seed"
-    for seed in range(3):
-        yield "july_three_seed", 8, seed, july / f"p59_s16_M4_tr025_wd030_seed{seed}", (10000, 100000)
-    for seed in range(3):
-        yield "v1_h15", 15, seed, root / "week/v1/results" / f"r3_T5_M4_seed{seed}", (0, 10000, 100000)
 
 @torch.inference_mode()
 def measure(path, history, split):
@@ -53,20 +46,23 @@ def measure(path, history, split):
 def main(output):
     torch.set_num_threads(1)
     rows = []
-    for cohort, horizon, seed, directory, steps in original_runs(rp.ROOT):
+    for seed in range(3):
+        directory = rp.ROOT / "week/v1/results" / f"r3_T5_M4_seed{seed}"
         split = read_json(directory / "split.json")
         assert split["train_idx"] == rp.TR.tolist() and split["test_idx"] == rp.TE.tolist(), str(directory)
         cfg = read_json(directory / "config.json")
-        assert cfg["r"] * cfg["T"] == horizon and cfg["seed"] == seed
-        assert (directory / "checkpoint_0000000.pt").exists() == (0 in steps)
+        assert cfg["r"] * cfg["T"] == 15 and cfg["seed"] == seed
         history = {r["step"]: r for r in read_json(directory / "history.json")}
-        for step in steps:
+        for step in (0, 10000, 100000):
             path = directory / f"checkpoint_{step:07d}.pt"
-            row = dict(cohort=cohort, horizon=horizon, seed=seed, step=step,
+            row = dict(cohort="v1_h15", horizon=15, seed=seed, step=step,
                        source=str(directory.relative_to(rp.ROOT)))
             row.update(measure(path, history[step], split))
+            n = row["test_size"]
+            row["read_a_correct_pct"] = f'{100 * row["read_a_correct"] / n:.2f}'
+            row["sum_correct_pct"] = f'{100 * row["sum_correct"] / n:.2f}'
             rows.append(row)
-            print(cohort, seed, step, row["read_a_correct"], row["sum_correct"], flush=True)
+            print(seed, step, f'{row["read_a_correct_pct"]}%', f'{row["sum_correct_pct"]}%', flush=True)
     with output.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=rows[0], lineterminator="\n")
         writer.writeheader()
