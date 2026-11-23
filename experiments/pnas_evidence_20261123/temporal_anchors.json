@@ -1,0 +1,362 @@
+[
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 0,
+    "phase": "first_10",
+    "history_step": 45000,
+    "replayed_step": 45000
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 0,
+    "phase": "before_first_10",
+    "history_step": 40000,
+    "replayed_step": 40000
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 0,
+    "phase": "first_50",
+    "history_step": 59500,
+    "replayed_step": 59500
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 0,
+    "phase": "first_65",
+    "history_step": 62500,
+    "replayed_step": 62500
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 0,
+    "phase": "first_90",
+    "history_step": 66500,
+    "replayed_step": 66500
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 1,
+    "phase": "first_10",
+    "history_step": 56000,
+    "replayed_step": 56000
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 1,
+    "phase": "before_first_10",
+    "history_step": 51000,
+    "replayed_step": 51000
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 1,
+    "phase": "first_50",
+    "history_step": 69500,
+    "replayed_step": 69500
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 1,
+    "phase": "first_65",
+    "history_step": 70500,
+    "replayed_step": 70500
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 1,
+    "phase": "first_90",
+    "history_step": 72000,
+    "replayed_step": 72000
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 2,
+    "phase": "first_10",
+    "history_step": 33500,
+    "replayed_step": 33500
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 2,
+    "phase": "before_first_10",
+    "history_step": 28500,
+    "replayed_step": 28500
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 2,
+    "phase": "first_50",
+    "history_step": 43500,
+    "replayed_step": 43500
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 2,
+    "phase": "first_65",
+    "history_step": 45500,
+    "replayed_step": 45500
+  },
+  {
+    "task": "moved_add",
+    "H": 8,
+    "seed": 2,
+    "phase": "first_90",
+    "history_step": 46500,
+    "replayed_step": 46500
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 0,
+    "phase": "first_10",
+    "history_step": 48000,
+    "replayed_step": 48000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 0,
+    "phase": "before_first_10",
+    "history_step": 43000,
+    "replayed_step": 43000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 0,
+    "phase": "first_50",
+    "history_step": 57000,
+    "replayed_step": 57000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 0,
+    "phase": "first_65",
+    "history_step": 58000,
+    "replayed_step": 58000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 0,
+    "phase": "first_90",
+    "history_step": 60500,
+    "replayed_step": 61000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 1,
+    "phase": "first_10",
+    "history_step": 57000,
+    "replayed_step": 57000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 1,
+    "phase": "before_first_10",
+    "history_step": 52000,
+    "replayed_step": 52000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 1,
+    "phase": "first_50",
+    "history_step": 65500,
+    "replayed_step": 66000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 1,
+    "phase": "first_65",
+    "history_step": 66500,
+    "replayed_step": 67000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 1,
+    "phase": "first_90",
+    "history_step": 69000,
+    "replayed_step": 69000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 2,
+    "phase": "first_10",
+    "history_step": 34000,
+    "replayed_step": 34000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 2,
+    "phase": "before_first_10",
+    "history_step": 29000,
+    "replayed_step": 29000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 2,
+    "phase": "first_50",
+    "history_step": 55500,
+    "replayed_step": 56000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 2,
+    "phase": "first_65",
+    "history_step": 59000,
+    "replayed_step": 59000
+  },
+  {
+    "task": "sub",
+    "H": 12,
+    "seed": 2,
+    "phase": "first_90",
+    "history_step": 71500,
+    "replayed_step": 72000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 0,
+    "phase": "first_10",
+    "history_step": 73000,
+    "replayed_step": 73000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 0,
+    "phase": "before_first_10",
+    "history_step": 68000,
+    "replayed_step": 68000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 0,
+    "phase": "first_50",
+    "history_step": 80500,
+    "replayed_step": 81000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 0,
+    "phase": "first_65",
+    "history_step": 82000,
+    "replayed_step": 82000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 0,
+    "phase": "first_90",
+    "history_step": 84000,
+    "replayed_step": 84000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 1,
+    "phase": "first_10",
+    "history_step": 35000,
+    "replayed_step": 35000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 1,
+    "phase": "before_first_10",
+    "history_step": 30000,
+    "replayed_step": 30000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 1,
+    "phase": "first_50",
+    "history_step": 87000,
+    "replayed_step": 87000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 1,
+    "phase": "first_65",
+    "history_step": 89500,
+    "replayed_step": 90000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 1,
+    "phase": "first_90",
+    "history_step": 92000,
+    "replayed_step": 92000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 2,
+    "phase": "first_10",
+    "history_step": 22500,
+    "replayed_step": 23000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 2,
+    "phase": "before_first_10",
+    "history_step": 17500,
+    "replayed_step": 17000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 2,
+    "phase": "first_50",
+    "history_step": 27500,
+    "replayed_step": 28000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 2,
+    "phase": "first_65",
+    "history_step": 28000,
+    "replayed_step": 28000
+  },
+  {
+    "task": "mul",
+    "H": 12,
+    "seed": 2,
+    "phase": "first_90",
+    "history_step": 32000,
+    "replayed_step": 32000
+  }
+]

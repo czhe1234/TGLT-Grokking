@@ -1,0 +1,70 @@
+{
+  "design": {
+    "0": {
+      "fixed_4000": 4000,
+      "fixed_20000": 20000,
+      "fixed_50000": 50000,
+      "fixed_85000": 85000,
+      "fixed_105500": 105500,
+      "fixed_155000": 155000,
+      "fixed_256000": 256000,
+      "fixed_300000": 300000,
+      "t10": 107500,
+      "t50": 144500,
+      "t65": 151500,
+      "t90": 155000,
+      "t10_minus_5000": 102500,
+      "t10_minus_20000": 87500
+    },
+    "1": {
+      "fixed_4000": 4000,
+      "fixed_20000": 20000,
+      "fixed_50000": 50000,
+      "fixed_85000": 85000,
+      "fixed_105500": 105500,
+      "fixed_155000": 155000,
+      "fixed_256000": 256000,
+      "fixed_300000": 300000,
+      "t10": 201000,
+      "t50": 228500,
+      "t65": 232500,
+      "t90": 237000,
+      "t10_minus_5000": 196000,
+      "t10_minus_20000": 181000
+    },
+    "2": {
+      "fixed_4000": 4000,
+      "fixed_20000": 20000,
+      "fixed_50000": 50000,
+      "fixed_85000": 85000,
+      "fixed_105500": 105500,
+      "fixed_155000": 155000,
+      "fixed_256000": 256000,
+      "fixed_300000": 300000,
+      "t10": 258000,
+      "t50": 296000,
+      "t65": null,
+      "t90": null,
+      "t10_minus_5000": 253000,
+      "t10_minus_20000": 238000
+    }
+  },
+  "donor_offsets": [
+    1,
+    7,
+    17,
+    23,
+    31,
+    42,
+    50,
+    58
+  ],
+  "extra_multipliers": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "primary": "On native errors compare true-minus-best-wrong margin of own add with average matched donor add. Show each seed, dose and donor; also retain fixed-rival delta and correctness.",
+  "comparison": "Common steps and sustained accuracy anchors. Independent positive reproduction means selective rescue becomes appreciable before sustained 90% in seed 1, across multiple donors/doses. Distinguish tests of formation from detection limits.",
+  "analysis_unit": "seed; questions and times are repeated measures"
+}
