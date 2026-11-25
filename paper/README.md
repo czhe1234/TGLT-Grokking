@@ -1,5 +1,7 @@
 # 论文草稿
 
+[传播范围与泛化动力学](communication_span.md)收录 PNAS 正文候选图、图注和复现入口。
+
 [sn-article.tex](sn-article.tex) 是此前研究一直用于理论与架构对照的草稿。本次按原文件上传，正文未作修改。
 
 ## 来源

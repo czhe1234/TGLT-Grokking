@@ -47,6 +47,7 @@ rT≤7的60条均未达到90%。rT≥15的60条有57条达到90%，但严格标�
 | 11_matched_controls.png | 同配置对照 | matched_component_curves.csv.gz、matched_case_summary.csv |
 | 12_same_config_counterexample.png | 同配置反例 | trajectories.csv.gz及原分析脚本 |
 | 13_single_mode_ablation_58.png | 58条按t50对齐的单mode消融 | mode_function_aligned_means.csv及individual_values.npz |
+| 14_communication_span_pairs.png / .pdf | 192条范围扫描、8组局域配对、2组窗口Transformer配对 | [图注与复现入口](../paper/communication_span.md) |
 
 图04中26个配置的3seed均达到50%，各自平移后平均。9个配置不具备3个t50，按原训练步数平均。
 每个平均点始终包含3个seed，只使用共同观察范围，不外推。浅色带为seed间样本标准差，不是置信区间。
